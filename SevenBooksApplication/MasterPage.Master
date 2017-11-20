@@ -63,10 +63,10 @@
                         <tr>
                             <td colspan="2" class="bgColour">
                                 <asp:Panel ID="Panel3" runat="server" Style="text-align: center; width: 100%">
-                                    <asp:Button class="btnHead" ID="btnChildren" runat="server" Text="Children" BorderStyle="None" />
-                                    <asp:Button class="btnHead" ID="btnFinance" runat="server" Text="Finance" BorderStyle="None" />
-                                    <asp:Button class="btnHead" ID="btnNonFiction" runat="server" Text="Non-Fiction" BorderStyle="None" />
-                                    <asp:Button class="btnHead" ID="btnTechnical" runat="server" Text="Technical" BorderStyle="None" />
+                                    <asp:Button class="btnHead" ID="btnChildren" runat="server" Text="Children" BorderStyle="None" OnClick="btnChildren_Click" />
+                                    <asp:Button class="btnHead" ID="btnFinance" runat="server" Text="Finance" BorderStyle="None" OnClick="btnFinance_Click" />
+                                    <asp:Button class="btnHead" ID="btnNonFiction" runat="server" Text="Non-Fiction" BorderStyle="None" OnClick="btnNonFiction_Click" />
+                                    <asp:Button class="btnHead" ID="btnTechnical" runat="server" Text="Technical" BorderStyle="None" OnClick="btnTechnical_Click" />
                                     <asp:Button class="btnHead" ID="btnManageBook" runat="server" Text="Manage Book" BorderStyle="None" />
                                     <asp:Button class="btnHead" ID="btnManageCustomer" runat="server" Text="Manage Customer" BorderStyle="None" />
                                 </asp:Panel>
