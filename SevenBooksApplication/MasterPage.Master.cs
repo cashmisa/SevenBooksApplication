@@ -45,8 +45,22 @@ namespace SevenBooksApplication
                 btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
             }
 
+            
+            string userName = "";
 
-            //if (Roles.FindUsersInRole("admin", "usernametomatch").Length == 0)
+
+
+    //        if (System.Web.HttpContext.Current != null &&
+    //System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+    //        {
+    //            System.Web.Security.MembershipUser usr = Membership.GetUser();
+    //            if (usr != null)
+    //            {
+    //                userName = HttpContext.Current.User.Identity.Name;
+    //            }
+    //        }
+
+            //if (Roles.FindUsersInRole("admin", userName).Length == 0)
             //{
             //    btnManageBook.Visible = false;
             //    btnManageCustomer.Visible = false;
@@ -57,7 +71,13 @@ namespace SevenBooksApplication
             //    btnManageCustomer.Visible = true;
             //}
 
-
+            if (userName == "")
+            {
+                btnWelcome.Text = "Welcome, Guest";
+            }else
+            {
+                btnWelcome.Text = string.Format("Welcome, {0}", userName);
+            }
         }
     }
 }
