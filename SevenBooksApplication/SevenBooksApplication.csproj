@@ -216,7 +216,6 @@
     <Content Include="SearchResults.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
     <Content Include="UpdateBook.aspx" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -313,13 +312,6 @@
     </Compile>
     <Compile Include="UpdateBook.aspx.designer.cs">
       <DependentUpon>UpdateBook.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>

@@ -19,6 +19,7 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
 </head>
 <body>
     <form id="form1" runat="server">
