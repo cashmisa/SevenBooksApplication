@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Home Page" Language="C#"  MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SevenBooksApplication._Default" %>
+<%@ Import Namespace="SevenBooksApplication" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-        
-   <link href="Content/bootstrap-minty.css" rel="stylesheet" type="text/css">
+    <link href="StyleSheetSevenBook1.css" rel="stylesheet" type="text/css" />
     <%--<asp:GridView ID="gvBook" runat="server" AutoGenerateColumns="False" BorderStyle="Dotted" CellPadding="5">
         <Columns>
             <asp:TemplateField>
@@ -26,26 +26,27 @@
         </Columns>
     </asp:GridView>--%>
     
-    <div>
-    <asp:Repeater ID="repBookList" runat="server">
+   <br/>
+    <asp:Repeater ID="repBookList" runat="server"> 
         <HeaderTemplate></HeaderTemplate>
         <ItemTemplate>
             <div style="display: inline-block">
-            <asp:Image runat="server" Width="200px" CssClass="img-responsive"
-                       ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:Image>
+            <asp:ImageButton runat="server" Width="200px" CssClass="img-responsive" OnClick="Image_Click" ID="bookImage"
+                       ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:ImageButton>
             <br/>
             <table>
-                <tr><td class="Title"><asp:Label CssClass="label" ID = "lbTitle" runat="server" text ='<%#Eval("Title") %>'></asp:Label></td></tr>
-                <tr><td class="Author"><asp:Label CssClass="label" ID = "lbAuthor" runat="server" text ='<%#Eval("Author") %>'></asp:Label></td></tr>
-                <tr><td class ="Price"><asp:Label CssClass="label" ID = "lbPrice" runat="server" text ='<%#Eval("Price") %>' ></asp:Label></td></tr>
-                <tr><td class="AddToCart"><asp:Button CssClass="btn" runat="server" ID="btnAddtoCart" Text="Add to cart"/></td></tr>
-            </table>
+                <tr><td class="title"><asp:Label CssClass="lb-book-list" ID = "lbTitle" runat="server" text ='<%#Eval("Title") %>'></asp:Label></td></tr>
+                <tr><td class="author"><asp:Label CssClass="lb-book-list" ID = "lbAuthor" runat="server" text ='<%#Eval("Author") %>'></asp:Label></td></tr>
+                <tr><td class ="price"><asp:Label CssClass="lb-book-list" ID = "lbPrice" runat="server" text ='<%#Eval("Price") %>' ></asp:Label></td></tr>
+                <tr><td></td></tr>
+                <tr><td class="add-to-cart"><asp:Button CssClass="btn-primary"  runat="server" ID="btnAddtoCart" Text="Add to cart"/></td></tr>
+           </table>
             </div>
             
         </ItemTemplate>
         <FooterTemplate></FooterTemplate>
+   
+    
     </asp:Repeater>
-    </div>
-
     </asp:Content>
 

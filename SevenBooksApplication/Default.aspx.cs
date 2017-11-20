@@ -1,6 +1,7 @@
 ﻿using SevenBooksApplication.App_Code;
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 
 namespace SevenBooksApplication
@@ -16,6 +17,14 @@ namespace SevenBooksApplication
                 repBookList.DataSource = BusinessLogic.SearchAllBooks();
                 repBookList.DataBind();
             }
+        }
+
+        protected void Image_Click(object sender, ImageClickEventArgs e)
+        {
+            //string url = ((ImageButton)sender).AlternateText;
+            //Response.Redirect("BookDetails.aspx?ISBN=" + url);
+
+            //Response.Redirect("http://www.google.com");
         }
     }
 }
