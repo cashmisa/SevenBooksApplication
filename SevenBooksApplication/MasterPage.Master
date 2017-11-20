@@ -85,7 +85,8 @@
         </div>
 
         <footer>
-            <p>&copy; <%: DateTime.Now.Year %>- SevenBooks</p>
+            <p>&copy; <%: DateTime.Now.Year %>- SevenBooks<asp:Image ID="Image1" runat="server" Height="74px" ImageUrl="~/Image/StoreLogo.jpg" Width="163px" />
+            </p>
         </footer>
     </form>
     <p>

@@ -225,6 +225,7 @@
     <Content Include="Image\9781616205676.jpg" />
     <Content Include="Image\9781619634480.jpg" />
     <Content Include="Image\9781911015222.jpg" />
+    <Content Include="Image\StoreLogo.jpg" />
     <Content Include="MyAccount.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
