@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
     <Content Include="Image\9780062390851.jpg" />
@@ -310,6 +311,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\BusinessLogic.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

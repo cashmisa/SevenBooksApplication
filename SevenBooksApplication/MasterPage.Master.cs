@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.Models;
-
+using System.Web.Security;
+using System.Security.Principal;
 
 namespace SevenBooksApplication
 {
@@ -35,16 +36,28 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if(cartList.Count == 0)
+            if (cartList.Count == 0)
             {
                 btnCart.Text = "View Cart";
-            }else
+            }
+            else
             {
                 btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
             }
 
+
+            //if (Roles.FindUsersInRole("admin", "usernametomatch").Length == 0)
+            //{
+            //    btnManageBook.Visible = false;
+            //    btnManageCustomer.Visible = false;
+            //}
+            //else
+            //{
+            //    btnManageBook.Visible = true;
+            //    btnManageCustomer.Visible = true;
+            //}
+
+
         }
-
-
     }
 }
