@@ -18,7 +18,7 @@ namespace SevenBooksApplication
 
         private void BindGrid()
         {
-            GridView1.DataSource = BusinessLogic.GetAllOrder();
+            GridView1.DataSource = BusinessLogic.SearchAllOrder();
             GridView1.DataBind();
         }
 
@@ -34,7 +34,7 @@ namespace SevenBooksApplication
             int orderId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
             string status = (row.FindControl("ddlStatus") as DropDownList).SelectedValue;
 
-            BusinessLogic.UpdateOrderStatus(orderId,status);
+            BusinessLogic.UpdateOrder(orderId,status);
             GridView1.EditIndex = -1;
             BindGrid();
         }
