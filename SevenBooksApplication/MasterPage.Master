@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SevenBooksApplication.MasterPage" %>
+
+<style type="text/css">
+    .auto-style1 {
+        width: 100%;
+    }
+
+    li {
+        display: inline;
+    }
+</style>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    &nbsp;<table class="auto-style1">
+                        <tr>
+                            <td>
+                                <asp:Button ID="btnHome" runat="server" Text="Home" />
+                                <asp:HiddenField ID="hdfUserID" runat="server" />
+
+                                <td>
+                                    <asp:Panel ID="Panel1" runat="server" Style="text-align: right; width: 100%">
+                                        <asp:Button ID="btnWelcome" runat="server" Text="Welcome, Guest" />
+                                        <asp:Button ID="btnCart" runat="server" Text="View Cart" />
+                                        <asp:Button ID="btnLogin" runat="server" Text="Login / Register" OnClick="btnLogin_Click" />
+
+                                    </asp:Panel>
+
+
+
+                                </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Panel ID="Panel2" runat="server">
+                                    <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
+                                    <asp:Button ID="btnSearch" runat="server" Text="Search" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Panel ID="Panel3" runat="server" Style="text-align: center; width: 100%">
+                                    <ul>
+                                        <li>
+                                            <a runat="server" href="~/Account/Login">Children</a>
+                                        </li>
+                                        <li>
+                                            <a runat="server" href="~/Account/Login">Finance</a>
+                                        </li>
+                                        <li>
+                                            <a runat="server" href="~/Account/Login">Non-Fiction</a>
+                                        </li>
+                                        <li>
+                                            <a runat="server" href="~/Account/Login">Technical</a>
+                                        </li>
+                                    </ul>
+
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td colspan="2">
+
+                                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %>- SevenBooks</p>
+        </footer>
+    </form>
+    <p>
+        &nbsp;
+    </p>
+    <p>
+        &nbsp;
+    </p>
+    <p>
+        &nbsp;
+    </p>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SevenBooksApplication.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="doNotUseOrDelete.Master.cs" Inherits="SevenBooksApplication.SiteMaster" %>
 
 <!DOCTYPE html>
 
