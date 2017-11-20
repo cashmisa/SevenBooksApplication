@@ -39,11 +39,11 @@ namespace SevenBooksApplication.App_Code
                 context.SaveChanges();
             }
         }
-        public static void DeleteBook(int BookID)
+        public static void DeleteBook(string ISBN)
         {
             using (BookContext context = new BookContext())
             {
-                Book book = context.Books.Where(x => x.BookID == BookID).First();
+                Book book = context.Books.Where(x => x.ISBN == ISBN).First();
                 context.Books.Remove(book);
                 context.SaveChanges();
             }
