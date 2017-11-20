@@ -14,6 +14,7 @@ namespace SevenBooksApplication.Models
         public class Book
         {
             [Key]
+            [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             [Column(Order = 0)]
             public int BookID { get; set; }
 
@@ -45,6 +46,7 @@ namespace SevenBooksApplication.Models
         public partial class Category
         {
             [Key]
+            [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             [Column(Order = 0)]
             public int CategoryID { get; set; }
 
