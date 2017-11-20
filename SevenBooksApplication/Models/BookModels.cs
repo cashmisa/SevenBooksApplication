@@ -46,6 +46,15 @@ namespace SevenBooksApplication.Models
             ISBN = isbn;
             Author = author;
         }
+        public Book(string title,string isbn,string author,int categoryID,int stock,decimal price)
+        {
+            Title = title;
+            ISBN = isbn;
+            Author = author;
+            Stock = stock;
+            CategoryID = categoryID;
+            Price = price;
+        }
     }
 
     [Table("Category")]

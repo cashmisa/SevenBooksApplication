@@ -79,5 +79,36 @@ namespace SevenBooksApplication
                 btnWelcome.Text = string.Format("Welcome, {0}", userName);
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != string.Empty) {
+                Response.Redirect("~/SearchResults.aspx?SearchBy=" + ddlSearch.Text + "&Term=" + tbSearch.Text);
+            }else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+
+        }
+
+        protected void btnChildren_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnChildren.Text);
+        }
+
+        protected void btnFinance_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnFinance.Text);
+        }
+
+        protected void btnNonFiction_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnNonFiction.Text);
+        }
+
+        protected void btnTechnical_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnTechnical.Text);
+        }
     }
 }

@@ -7,21 +7,31 @@ namespace SevenBooksApplication.App_Code
     public class BusinessLogic
     {
         //BookContext context = new BookContext();
-        public static void AddBook(Book book)
+        public static void AddBook(string title,string categoryName, string isbn,string author, int stock , decimal price)
         {
             using (BookContext context = new BookContext())
             {
+                Book book = new Book
+                {
+                 Title = title,
+                 ISBN = isbn,
+                Author = author,
+                Stock = stock,
+                CategoryID = getCategoryID(categoryName),
+                Price = price
+            };
                 context.Books.Add(book);
                 context.SaveChanges();
+                
             }
         }
-        public static void UpdateBook(int BookID, string Title, int CategoryID, string ISBN, string Author, int Stock, decimal Price)
+        public static void UpdateBook(int BookID, string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
         {
             using (BookContext context = new BookContext())
             {
                 Book book = context.Books.Where(x => x.BookID == BookID).First();
                 book.Title = Title;
-                book.CategoryID = CategoryID;
+                book.CategoryID = getCategoryID(CategoryName);
                 book.ISBN = ISBN;
                 book.Author = Author;
                 book.Stock = Stock;
@@ -57,6 +67,13 @@ namespace SevenBooksApplication.App_Code
             using (BookContext context = new BookContext())
             {
                 return context.Books.Where(x=>x.ISBN == ISBN).ToList<Book>()[0];
+            }
+        }
+        public static Book SearchBookByBookId(int bookID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Books.Where(x => x.BookID == bookID).ToList<Book>()[0];
             }
         }
         public static int getCategoryID(string category)
