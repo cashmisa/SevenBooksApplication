@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity;
 
 namespace SevenBooksApplication
 {
-    public partial class SiteMaster : MasterPage
+    public partial class SiteMasterCopy : MasterPage
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
