@@ -119,7 +119,7 @@ namespace SevenBooksApplication
 
         protected void btnManageDiscount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/SetDiscount.aspx");
+            Response.Redirect("~/Admin/SetDiscount.aspx");
         }
     }
 }
