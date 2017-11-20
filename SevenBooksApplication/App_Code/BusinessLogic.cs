@@ -61,5 +61,24 @@ namespace SevenBooksApplication.App_Code
                 return context.Books.Where(x=>x.BookID == BookID).ToList<Book>()[0];
             }
         }
+        public static int getCategoryID(string category)
+        {
+            using (BookContext context = new BookContext())
+            {
+
+                Category c= context.Categories.Where(x => x.Name == category).ToList<Category>()[0];
+               
+                return c.CategoryID;
+
+            }
+        }
+        public static List<Book> SearchBookByCategory(string category)
+        {
+            using (BookContext context = new BookContext())
+            {
+                int categoryID = getCategoryID(category);
+                return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
+            }
+        }
     }
 }
