@@ -178,7 +178,54 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account.aspx" />
+    <Content Include="Image\9780060555665.jpg" />
+    <Content Include="Image\9780062377210.jpg" />
+    <Content Include="Image\9780062390851.jpg" />
+    <Content Include="Image\9780062498533.jpg" />
+    <Content Include="Image\9780262035613.jpg" />
+    <Content Include="Image\9780307279187.jpg" />
+    <Content Include="Image\9780316468978.jpg" />
+    <Content Include="Image\9780374300210.jpg" />
+    <Content Include="Image\9780385376716.jpg" />
+    <Content Include="Image\9780385537353.jpg" />
+    <Content Include="Image\9780399255373.jpg" />
+    <Content Include="Image\9780399588174.jpg" />
+    <Content Include="Image\9780425285176.jpg" />
+    <Content Include="Image\9780544633384.jpg" />
+    <Content Include="Image\9780691135144.jpg" />
+    <Content Include="Image\9780691169019.jpg" />
+    <Content Include="Image\9780735214149.jpg" />
+    <Content Include="Image\9780744017311.jpg" />
+    <Content Include="Image\9780803741713.jpg" />
+    <Content Include="Image\9780812988406.jpg" />
+    <Content Include="Image\9780812995800.jpg" />
+    <Content Include="Image\9780812996937.jpg" />
+    <Content Include="Image\9780984782857.jpg" />
+    <Content Include="Image\9780997584714.jpg" />
+    <Content Include="Image\9781101875681.jpg" />
+    <Content Include="Image\9781101904404.jpg" />
+    <Content Include="Image\9781119144755.jpg" />
+    <Content Include="Image\9781119259756.jpg" />
+    <Content Include="Image\9781259589515.jpg" />
+    <Content Include="Image\9781419721373.jpg" />
+    <Content Include="Image\9781442468405.jpg" />
+    <Content Include="Image\9781476763828.jpg" />
+    <Content Include="Image\9781484732748.jpg" />
+    <Content Include="Image\9781484746424.jpg" />
+    <Content Include="Image\9781491962299.jpg" />
+    <Content Include="Image\9781497644892.jpg" />
+    <Content Include="Image\9781501163807.jpg" />
+    <Content Include="Image\9781506703350.jpg" />
+    <Content Include="Image\9781506703671.jpg" />
+    <Content Include="Image\9781506705408.jpg" />
+    <Content Include="Image\9781524766498.jpg" />
+    <Content Include="Image\9781535585958.jpg" />
+    <Content Include="Image\9781589795471.jpg" />
+    <Content Include="Image\9781593276034.jpg" />
+    <Content Include="Image\9781616205676.jpg" />
+    <Content Include="Image\9781619634480.jpg" />
+    <Content Include="Image\9781911015222.jpg" />
+    <Content Include="MyAccount.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -257,12 +304,12 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.aspx.cs">
-      <DependentUpon>Account.aspx</DependentUpon>
+    <Compile Include="MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account.aspx.designer.cs">
-      <DependentUpon>Account.aspx</DependentUpon>
+    <Compile Include="MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
