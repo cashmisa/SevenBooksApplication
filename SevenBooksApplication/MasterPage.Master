@@ -1,24 +1,24 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SevenBooksApplication.MasterPage" %>
 
-<style type="text/css">
-    .auto-style1 {
-        width: 100%;
-    }
-
-    li {
-        display: inline;
-    }
-
-    .auto-style2 {
-        margin-left: 0px;
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        li {
+            display: inline;
+        }
+
+        .auto-style2 {
+            margin-left: 0px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -47,8 +47,8 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                    <asp:Button class="btnHead" ID="btnManageBook" runat="server" Text="Manage Book" BorderStyle="None" OnClick="btnManageBook_Click" />
-                                    <asp:Button class="btnHead" ID="btnManageCustomer" runat="server" Text="Manage Customer" BorderStyle="None" OnClick="btnManageCustomer_Click" />
+                                <asp:Button class="btnHead" ID="btnManageBook" runat="server" Text="Manage Book" BorderStyle="None" OnClick="btnManageBook_Click" />
+                                <asp:Button class="btnHead" ID="btnManageCustomer" runat="server" Text="Manage Customer" BorderStyle="None" OnClick="btnManageCustomer_Click" />
                                 <br />
                                 <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
                                     <asp:DropDownList ID="ddlSearch" runat="server">

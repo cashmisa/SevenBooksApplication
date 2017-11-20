@@ -13,15 +13,11 @@ namespace SevenBooksApplication
     public partial class MasterPage : System.Web.UI.MasterPage
 
     {
-        public List<Book> cartList
+        public List<Book> CartList
         {
             get
             {
-                if (Session["carList"] != null)
-                {
-
-                }
-                else
+                if (Session["cartList"] == null)
                 {
                     Session["cartList"] = new List<Book>();
                 }
@@ -36,15 +32,14 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (cartList.Count == 0)
+            if (CartList.Count == 0)
             {
                 btnCart.Text = "View Cart";
             }
             else
             {
-                btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
+                btnCart.Text = string.Format("View Cart ({0})", CartList.Count);
             }
-
 
 
             string userName = "";
@@ -53,19 +48,8 @@ namespace SevenBooksApplication
             if (System.Web.HttpContext.Current != null)
             {
                 userName = HttpContext.Current.User.Identity.Name;
-
                 isAdmin = Roles.IsUserInRole("admin");
             }
-
-            //        if (System.Web.HttpContext.Current != null &&
-            //System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
-            //        {
-            //            System.Web.Security.MembershipUser usr = Membership.GetUser();
-            //            if (usr != null)
-            //            {
-            //                userName = HttpContext.Current.User.Identity.Name;
-            //            }
-            //        }
 
             if (userName == "")
             {
