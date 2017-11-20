@@ -4,9 +4,7 @@
 
     <asp:GridView ID="gvBook" runat="server">
         <Columns>
-            <!--
-            <asp:ImageField DataImageUrlField='~/image/<%#Eval("ISBN")%>.jpg'>
-            </asp:ImageField>-->
+            
         </Columns>
     </asp:GridView>
 
