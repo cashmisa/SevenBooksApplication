@@ -7,22 +7,22 @@ namespace SevenBooksApplication.App_Code
     public class BusinessLogic
     {
         //BookContext context = new BookContext();
-        public static void AddBook(string title,string categoryName, string isbn,string author, int stock , decimal price)
+        public static void AddBook(string title, string categoryName, string isbn, string author, int stock, decimal price)
         {
             using (BookContext context = new BookContext())
             {
                 Book book = new Book
                 {
-                 Title = title,
-                 ISBN = isbn,
-                Author = author,
-                Stock = stock,
-                CategoryID = getCategoryID(categoryName),
-                Price = price
-            };
+                    Title = title,
+                    ISBN = isbn,
+                    Author = author,
+                    Stock = stock,
+                    CategoryID = getCategoryID(categoryName),
+                    Price = price
+                };
                 context.Books.Add(book);
                 context.SaveChanges();
-                
+
             }
         }
         public static void UpdateBook(int BookID, string Title, int CategoryID, string ISBN, string Author, int Stock, decimal Price)
@@ -64,60 +64,76 @@ namespace SevenBooksApplication.App_Code
         }
         public static Book SearchBookByISBN(string ISBN)
         {
-            using (BookContext context = new BookContext())
+            try
             {
-                return context.Books.Where(x=>x.ISBN == ISBN).ToList<Book>()[0];
+                using (BookContext context = new BookContext())
+                {
+                    return context.Books.Where(x => x.ISBN == ISBN).ToList<Book>()[0];
+                }
             }
-        }
-        public static int getCategoryID(string category)
-        {
-            using (BookContext context = new BookContext())
+            catch (System.ArgumentOutOfRangeException)
             {
+                Book noBookNull = null;
+                return noBookNull;
+            }
 
-                Category c= context.Categories.Where(x => x.Name == category).ToList<Category>()[0];
-               
-                return c.CategoryID;
+        }
+    
+    public static int getCategoryID(string category)
+    {
+            try
+            {
+                using (BookContext context = new BookContext())
+                {
 
-            }
-        }
-        public static List<Book> SearchBookByCategory(string category)
-        {
-            using (BookContext context = new BookContext())
+                    Category c = context.Categories.Where(x => x.Name == category).ToList<Category>()[0];
+
+                    return c.CategoryID;
+
+                }
+            }catch (System.ArgumentOutOfRangeException)
             {
-                int categoryID = getCategoryID(category);
-                return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
-                
+                return 0;
             }
-        }
-        public static List<Order> SearchAllOrder()
+    }
+    public static List<Book> SearchBookByCategory(string category)
+    {
+        using (BookContext context = new BookContext())
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.ToList<Order>();
-            }
-        }
-        public static List<Order> SearchOrderByUserID(string UserID)
-        {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.Where(x => x.UserID == UserID).ToList<Order>();
-            }
-        }
-        public static Order SearchByOrderID(int OrderID)
-        {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.Where(x => x.OrderID == OrderID).First();
-            }
-        }
-        public static void UpdateOrder(int OrderID,string OrderStatus)
-        {
-            using (BookContext context = new BookContext())
-            {
-                Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
-                order.OrderStatus = OrderStatus;
-                context.SaveChanges();
-            }
+            int categoryID = getCategoryID(category);
+            return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
+
         }
     }
+    public static List<Order> SearchAllOrder()
+    {
+        using (BookContext context = new BookContext())
+        {
+            return context.Orders.ToList<Order>();
+        }
+    }
+    public static List<Order> SearchOrderByUserID(string UserID)
+    {
+        using (BookContext context = new BookContext())
+        {
+            return context.Orders.Where(x => x.UserID == UserID).ToList<Order>();
+        }
+    }
+    public static Order SearchByOrderID(int OrderID)
+    {
+        using (BookContext context = new BookContext())
+        {
+            return context.Orders.Where(x => x.OrderID == OrderID).First();
+        }
+    }
+    public static void UpdateOrder(int OrderID, string OrderStatus)
+    {
+        using (BookContext context = new BookContext())
+        {
+            Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
+            order.OrderStatus = OrderStatus;
+            context.SaveChanges();
+        }
+    }
+}
 }
