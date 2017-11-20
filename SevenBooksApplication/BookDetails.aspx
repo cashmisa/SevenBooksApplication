@@ -1,15 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookDetails.aspx.cs" Inherits="SevenBooksApplication.BookDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-   <table>
+    <table>
        <tr>
            <td>
-               <asp:Image ID="Image1" runat="server" Height="500px" Width="500" />
+               <asp:Image ID="Image1" runat="server" Height="300px" Width="300px" />
            </td>
            <td>
 
            </td>
            <td>
-               <asp:Label ID="tbTitle" runat="server" Text="Title" Font-Size="Medium"></asp:Label>
+               <asp:Label ID="tbTitle" runat="server" Text="Title" Font-Size="Large" Font-Bold="True"></asp:Label>
                <br />
                <br />
 
@@ -17,6 +17,8 @@
                <br />
                <br />
                <br />
+
+               <asp:Label ID="Label3" runat="server" Text="S$"></asp:Label>
 
                <asp:Label ID="tbPrice" runat="server" Text="Price"></asp:Label>
                <br />
@@ -30,7 +32,8 @@
                <asp:Label ID="Label2" runat="server" Text="Qty"></asp:Label>
                <br />
 
-               <asp:ListBox ID="lbQty" runat="server"></asp:ListBox>
+               <asp:DropDownList ID="ddlQty" runat="server">
+               </asp:DropDownList>
 
               <br />
                <br />

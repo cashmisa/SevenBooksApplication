@@ -40,6 +40,15 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Label tbAuthor;
         
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
         /// tbPrice control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// lbQty control.
+        /// ddlQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbQty;
+        protected global::System.Web.UI.WebControls.DropDownList ddlQty;
         
         /// <summary>
         /// Button1 control.
