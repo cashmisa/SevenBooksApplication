@@ -1,8 +1,6 @@
-﻿using System;
+﻿using SevenBooksApplication.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using SevenBooksApplication.Models;
 
 namespace SevenBooksApplication.App_Code
 {
@@ -17,7 +15,7 @@ namespace SevenBooksApplication.App_Code
                 context.SaveChanges();
             }
         }
-        public static void UpdateBook(int BookID,string Title,int CategoryID,string ISBN,string Author,int Stock,decimal Price)
+        public static void UpdateBook(int BookID, string Title, int CategoryID, string ISBN, string Author, int Stock, decimal Price)
         {
             using (BookContext context = new BookContext())
             {
@@ -33,7 +31,7 @@ namespace SevenBooksApplication.App_Code
         }
         public static void DeleteBook(int BookID)
         {
-            using(BookContext context = new BookContext())
+            using (BookContext context = new BookContext())
             {
                 Book book = context.Books.Where(x => x.BookID == BookID).First();
                 context.Books.Remove(book);
@@ -42,23 +40,23 @@ namespace SevenBooksApplication.App_Code
         }
         public static List<Book> SearchAllBooks()
         {
-            using(BookContext context = new BookContext())
+            using (BookContext context = new BookContext())
             {
                 return context.Books.ToList<Book>();
             }
-        } 
+        }
         public static List<Book> SearchBookByTitle(string Title)
         {
-            using(BookContext context = new BookContext())
+            using (BookContext context = new BookContext())
             {
-                return context.Books.Where(x=>x.Title == Title).ToList<Book>();
+                return context.Books.Where(x => x.Title == Title).ToList<Book>();
             }
         }
-        public static List<Book> SearchBookByID(int BookID)
+        public static Book SearchBookByISBN(string ISBN)
         {
-            using(BookContext context = new BookContext())
+            using (BookContext context = new BookContext())
             {
-                return context.Books.Where(x=>x.BookID == BookID).ToList<Book>();
+                return context.Books.First(x => x.ISBN == ISBN);
             }
         }
     }

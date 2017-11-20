@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using SevenBooksApplication.App_Code;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace SevenBooksApplication
 {
@@ -11,7 +9,11 @@ namespace SevenBooksApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                gvBook.DataSource = BusinessLogic.SearchAllBooks();
+                gvBook.DataBind();
+            }
         }
     }
 }

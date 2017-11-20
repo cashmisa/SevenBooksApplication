@@ -1,0 +1,44 @@
+﻿body {
+}
+
+button {
+}
+
+.btnHead {
+    background: #34d9bb;
+    background-image: -webkit-linear-gradient(top, #34d9bb, #34d9bb);
+    background-image: -moz-linear-gradient(top, #34d9bb, #34d9bb);
+    background-image: -ms-linear-gradient(top, #34d9bb, #34d9bb);
+    background-image: -o-linear-gradient(top, #34d9bb, #34d9bb);
+    background-image: linear-gradient(to bottom, #34d9bb, #34d9bb);
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 28px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+
+.bgColourInLineBlock {
+    display: inline-block;
+    background: #34D9BB;
+    float: right;
+}
+
+.bgColourInLineBlockLeft {
+    display: inline-block;
+    background: #34D9BB;
+    float: left;
+}
+
+.bgColour{
+    background: #34D9BB;
+}
+
+.btnHead:hover {
+    background: #2cbd91;
+    text-decoration: none;
+}
