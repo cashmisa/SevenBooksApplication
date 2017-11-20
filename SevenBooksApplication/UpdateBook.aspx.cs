@@ -1,4 +1,5 @@
 ﻿using SevenBooksApplication.App_Code;
+using SevenBooksApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,31 @@ namespace SevenBooksApplication
 {
     public partial class UpdateBook : System.Web.UI.Page
     {
-        int bookID;
+        
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-            bookID = Convert.ToInt32(Request.QueryString["bookID"]);
+            //string isbn = Request.QueryString["ISBN"];
+            string isbn = "9780812996937";
+            Book b = BusinessLogic.SearchBookByISBN(isbn);
+            tbBookId.Text = b.BookID + " ";
+            tbAuthor.Text = b.Author;
+            tbISBN.Text = b.ISBN;
+            tbTitle.Text = b.Title;
+            tbQuantity.Text = b.Stock+"";
+            tbPrice.Text = b.Price + "";
+                         
+            ddlCategory.Items[b.CategoryID].Selected = true;
+
+           
+
+
+
+        }
+
+        protected void update(object sender, EventArgs e)
+        {
+            int bookID = Convert.ToInt32(tbBookId.Text);
             string title = tbTitle.Text;
             string author = tbAuthor.Text;
 

@@ -1,7 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UpdateBook.aspx.cs" Inherits="SevenBooksApplication.UpdateBook" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+    <br />
 
      <table>
+         <tr>
+            <td>
+                BookID
+            </td>
+            <td>
+                <asp:TextBox ID="tbBookId" runat="server"></asp:TextBox> 
+            </td>
+        </tr>
+
         <tr>
             <td>
                 Title
@@ -31,7 +42,13 @@
                 Catgory
             </td>
             <td>
-                <asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCategory" runat="server">
+                    <asp:ListItem Text="Children" Value="Children" />
+                            <asp:ListItem Text="Finance" Value="Finance" />
+                    <asp:ListItem Text="NonFiction" Value="NonFiction" />
+                            <asp:ListItem Text="Technical" Value="Technical" />
+
+                </asp:DropDownList>
             </td>
         </tr>
          <tr>
@@ -64,5 +81,5 @@
     <br />
     <br />
 
-    <asp:Button ID="btUpdate" runat="server" Text="Update" />
+    <asp:Button ID="btUpdate" runat="server" Text="Update" OnClick="update" />
 </asp:Content>
