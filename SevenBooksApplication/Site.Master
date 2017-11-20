@@ -14,9 +14,20 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+<style type="text/css">
+        .auto-style1 {
+            width: 100%;
+}
+        li
+        {
+            display: inline;
+        }       
+    </style>
+
 </head>
 <body>
     <form runat="server">
+        <!--
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -37,50 +48,80 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        //-->
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    &nbsp;<table class="auto-style1">
+                        <tr>
+                            <td><asp:Button ID="btnHome" runat="server" Text="Home" />
+                                <asp:HiddenField ID="HiddenField1" runat="server" />
+     
+                                <td><asp:Panel ID="Panel1" runat="server" style="text-align:right; width:100%">
+                                    <asp:Button ID="btnWelcome" runat="server" Text="Welcome, Guest" />
+                                    <asp:Button ID="btnCart" runat="server" Text="View Cart" />
+                                    <asp:Button ID="btnLogin" runat="server" Text="Login / Register" />
+                         
+                                    </asp:Panel>
+
+                                    
+                                                         
+                                </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Panel ID="Panel2" runat="server">
+                                    <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                            <asp:Panel ID="Panel3" runat="server" style="text-align:center; width:100%">
+                                <ul>
+                                    <li>
+                                        <a runat="server" href="~/Account/Login">Children</a>
+                                        </li>
+                                    <li>
+                                    <a runat="server" href="~/Account/Login">Finance</a>
+                                    </li>
+                                    <li>
+                                    <a runat="server" href="~/Account/Login">Non-Fiction</a>
+                                        </li>
+                                    <li>
+                                    <a runat="server" href="~/Account/Login">Technical</a>
+                                    </li>
+                                </ul>
+                                    
+                                    </asp:Panel>   
+                                </td>
+                        </tr>
+                        <tr><td>
+
+                            </td>
+                            <td>
+                                       <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+ 
+         <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - SevenBooks</p>
             </footer>
-        </div>
     </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
