@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddNewBook.aspx" />
+    <Content Include="Content\bootstrap-minty.css" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
     <Content Include="Image\9780062390851.jpg" />
@@ -416,7 +417,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/SevenBooksApplication</IISUrl>
+          <IISUrl>http://localhost:2592/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
