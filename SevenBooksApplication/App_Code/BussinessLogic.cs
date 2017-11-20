@@ -54,6 +54,13 @@ namespace SevenBooksApplication.App_Code
                 return entities.Books.Where(x=>x.Title == Title).ToList<Book>();
             }
         }
+        public static Book GetBookDetails(string ISBN)
+        {
+            using (BookContext entities = new BookContext())
+            {
+                return entities.Books.Where(x => x.ISBN == ISBN).ToList<Book>()[0];
+            }
+        }
        
     }
 }

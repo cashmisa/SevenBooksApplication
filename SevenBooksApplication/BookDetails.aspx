@@ -9,16 +9,16 @@
 
            </td>
            <td>
-               <asp:Label ID="lbTitle" runat="server" Text="Title" Font-Size="Medium"></asp:Label>
+               <asp:Label ID="tbTitle" runat="server" Text="Title" Font-Size="Medium"></asp:Label>
                <br />
                <br />
 
-               <asp:Label ID="lbAuthor" runat="server" Text="Author"></asp:Label>
+               <asp:Label ID="tbAuthor" runat="server" Text="Author"></asp:Label>
                <br />
                <br />
                <br />
 
-               <asp:Label ID="lbPrice" runat="server" Text="Price"></asp:Label>
+               <asp:Label ID="tbPrice" runat="server" Text="Price"></asp:Label>
                <br />
 
                <br />

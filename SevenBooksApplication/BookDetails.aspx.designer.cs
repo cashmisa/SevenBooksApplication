@@ -22,31 +22,31 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// lbTitle control.
+        /// tbTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTitle;
+        protected global::System.Web.UI.WebControls.Label tbTitle;
         
         /// <summary>
-        /// lbAuthor control.
+        /// tbAuthor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAuthor;
+        protected global::System.Web.UI.WebControls.Label tbAuthor;
         
         /// <summary>
-        /// lbPrice control.
+        /// tbPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPrice;
+        protected global::System.Web.UI.WebControls.Label tbPrice;
         
         /// <summary>
         /// Label1 control.
