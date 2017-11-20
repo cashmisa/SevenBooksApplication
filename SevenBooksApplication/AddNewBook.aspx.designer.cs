@@ -10,7 +10,7 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Admin {
+    public partial class AddNewBook {
         
         /// <summary>
         /// tbTitle control.
@@ -58,13 +58,13 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// statuslabel control.
+        /// StatusLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label statuslabel;
+        protected global::System.Web.UI.WebControls.Label StatusLabel;
         
         /// <summary>
         /// tbPrice control.
@@ -74,6 +74,15 @@ namespace SevenBooksApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbPrice;
+        
+        /// <summary>
+        /// tbQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbQuantity;
         
         /// <summary>
         /// btAdd control.
