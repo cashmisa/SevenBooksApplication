@@ -10,6 +10,6 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Account {
+    public partial class MyAccount {
     }
 }
