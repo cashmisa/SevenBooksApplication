@@ -79,6 +79,35 @@ namespace SevenBooksApplication.App_Code
                 
             }
         }
-        
+        public static List<Order> SearchAllOrder()
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Orders.ToList<Order>();
+            }
+        }
+        public static List<Order> SearchOrderByUserID(string UserID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Orders.Where(x => x.UserID == UserID).ToList<Order>();
+            }
+        }
+        public static Order SearchByOrderID(int OrderID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Orders.Where(x => x.OrderID == OrderID).First();
+            }
+        }
+        public static void UpdateOrder(int OrderID,string OrderStatus)
+        {
+            using (BookContext context = new BookContext())
+            {
+                Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
+                order.OrderStatus = OrderStatus;
+                context.SaveChanges();
+            }
+        }
     }
 }
