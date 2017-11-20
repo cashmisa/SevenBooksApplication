@@ -24,13 +24,13 @@
                         <tr>
                             <td>
                                 <asp:Button ID="btnHome" runat="server" Text="Home" />
-                                <asp:HiddenField ID="HiddenField1" runat="server" />
+                                <asp:HiddenField ID="hdfUserID" runat="server" />
 
                                 <td>
                                     <asp:Panel ID="Panel1" runat="server" Style="text-align: right; width: 100%">
                                         <asp:Button ID="btnWelcome" runat="server" Text="Welcome, Guest" />
                                         <asp:Button ID="btnCart" runat="server" Text="View Cart" />
-                                        <asp:Button ID="btnLogin" runat="server" Text="Login / Register" />
+                                        <asp:Button ID="btnLogin" runat="server" Text="Login / Register" OnClick="btnLogin_Click" />
 
                                     </asp:Panel>
 
@@ -68,8 +68,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>
+                            
+                            <td colspan="2">
 
                                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                                     </asp:ContentPlaceHolder>
@@ -82,7 +82,7 @@
         </div>
 
         <footer>
-            <p>&copy; <%: DateTime.Now.Year %> - SevenBooks</p>
+            <p>&copy; <%: DateTime.Now.Year %>- SevenBooks</p>
         </footer>
     </form>
     <p>

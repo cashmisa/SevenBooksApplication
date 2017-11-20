@@ -31,13 +31,13 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Button btnHome;
         
         /// <summary>
-        /// HiddenField1 control.
+        /// hdfUserID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
+        protected global::System.Web.UI.WebControls.HiddenField hdfUserID;
         
         /// <summary>
         /// Panel1 control.

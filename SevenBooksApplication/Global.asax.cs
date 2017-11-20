@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SevenBooksApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,8 +21,11 @@ namespace SevenBooksApplication
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            
+            Session["cartList"] = new List<Book>(); 
         }
+
+
+
 
         protected void Application_Error(object sender, EventArgs e)
         {
@@ -30,7 +34,7 @@ namespace SevenBooksApplication
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+            Session.Clear();
         }
     }
 }
