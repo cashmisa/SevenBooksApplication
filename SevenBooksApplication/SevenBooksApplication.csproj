@@ -266,6 +266,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="PasswordRecovery.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="StyleSheetSevenBook1.css" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="OrderSummary.aspx" />

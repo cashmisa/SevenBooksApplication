@@ -12,6 +12,7 @@
         margin-left: 0px;
     }
 </style>
+<link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,18 +24,20 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    &nbsp;<table class="auto-style1">
+                    <table class="auto-style1">
                         <tr>
-                            <td>
-                                <asp:Button ID="btnHome" runat="server" Text="Home" />
+                            <td class="bgColour" colspan="2">
+                                <asp:Panel class="bgColourInLineBlockLeft" ID="Panel4" runat="server" Style="text-align: right">
+                                <asp:Button class="btnHead" ID="btnHome" runat="server" Text="Home" BorderStyle="None" />
                                 <asp:HiddenField ID="hdfUserID" runat="server" />
+                                </asp:Panel>
 
-                                <td>
-                                    <asp:Panel ID="Panel1" runat="server" Style="text-align: right; width: 100%">
+                                
+                                    <asp:Panel class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
                                         
-                                        <asp:Button ID="btnWelcome" runat="server" Text="Welcome, Guest" />
-                                        <asp:Button ID="btnCart" runat="server" Text="View Cart" />
-                                        <asp:LoginStatus ID="LoginStatus" runat="server" BorderStyle="Groove" LoginText="Login / Register" />
+                                        <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
+                                        <asp:Button class="btnHead"  ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" />
+                                        <asp:LoginStatus class="btnHead"  ID="LoginStatus" runat="server" LoginText="Login / Register" />
                                     </asp:Panel>
 
 
