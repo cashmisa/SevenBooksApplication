@@ -21,8 +21,8 @@ namespace SevenBooksApplication
 
         protected void Image_Click(object sender, ImageClickEventArgs e)
         {
-            string url = ((ImageButton)sender).AlternateText;
-            Response.Redirect("BookDetails.aspx?ISBN=" + url);
+            //string url = ((ImageButton)sender).AlternateText;
+            //Response.Redirect("BookDetails.aspx?ISBN=" + url);
 
             //Response.Redirect("http://www.google.com");
         }
