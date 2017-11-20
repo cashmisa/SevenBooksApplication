@@ -14,9 +14,9 @@ namespace SevenBooksApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int BookID = 4;
-           // int BookID = (int)Session["bookID"];
-           Book b=BusinessLogic.SearchBookByID(BookID);
+           // int BookID = 4;
+          String ISBN = (String)Session["ISBN"];
+           Book b=BusinessLogic.SearchBookByISBN(ISBN);
             string isbn = b.ISBN;
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;

@@ -76,8 +76,9 @@ namespace SevenBooksApplication.App_Code
             {
                 int categoryID = getCategoryID(category);
                 return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
-                return context.Books.First(x => x.ISBN == ISBN);
+                
             }
         }
+        
     }
 }
