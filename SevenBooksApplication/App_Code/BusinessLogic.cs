@@ -79,6 +79,24 @@ namespace SevenBooksApplication.App_Code
                 
             }
         }
-        
+        public static List<Order> GetAllOrder()
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Orders.ToList<Order>();
+            }
+        }
+        public static void UpdateOrderStatus(int orderId,string status)
+        {
+            using (BookContext context = new BookContext())
+            {
+                Order order = context.Orders.Where(p => p.OrderID == orderId).First<Order>();
+                order.OrderStatus = status;
+                context.SaveChanges();
+            }
+
+        }
+
+
     }
 }
