@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddNewBook.aspx" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
     <Content Include="Image\9780062390851.jpg" />
@@ -313,6 +314,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewBook.aspx.cs">
+      <DependentUpon>AddNewBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewBook.aspx.designer.cs">
+      <DependentUpon>AddNewBook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BusinessLogic.cs" />
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>

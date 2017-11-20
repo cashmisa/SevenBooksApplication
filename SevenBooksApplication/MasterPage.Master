@@ -13,7 +13,7 @@
         margin-left: 0px;
     }
 </style>
-<link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
+<link rel="stylesheet" type="text/css" href="Content/bootstrap-minty.css" />
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,9 +34,9 @@
                                 </asp:Panel>
 
 
-                                <asp:Panel class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
+                                <asp:Panel CssClass="navbar navbar-expand-lg navbar-dark bg-primary" class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
 
-                                    <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
+                                    <asp:Button CssClass="navbar-toggler" class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
                                     <asp:Button class="btnHead" ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" />
                                     <asp:LoginStatus class="btnHead" ID="LoginStatus" runat="server" LoginText="Login / Register" />
                                 </asp:Panel>

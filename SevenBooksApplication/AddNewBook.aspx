@@ -39,8 +39,6 @@
             </td>
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                
-
             </td>
              
         </tr>
@@ -58,9 +56,12 @@
                 Qutantity
             </td>
             <td>
-                <asp:TextBox ID="tbQty" runat="server"></asp:TextBox> 
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
-    
+
+    <br />
+    <br />
+
+    <asp:Button ID="btAdd" runat="server" Text="Add" OnClick="Add_onClick" Width="122px" />
     </asp:Content>

@@ -4,8 +4,8 @@
     
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
              DataKeyNames="OrderID"
-            OnRowCancelingEdit="OnRowCancelingEdit" OnRowDeleting="OnRowDeleting" 
-            OnRowEditing="OnRowEditing" OnRowUpdating="OnRowUpdating" OnRowDataBound="OnRowDataBound">
+            OnRowCancelingEdit="OnRowCancelingEdit"
+            OnRowEditing="OnRowEditing" OnRowUpdating="OnRowUpdating" >
             <Columns>
                 <asp:TemplateField HeaderText="OrderID">
                     
@@ -14,10 +14,10 @@
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="CustomerName">
+                <asp:TemplateField HeaderText="UserID">
                    
                     <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("Username") %>'></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("UserID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="BookID">
@@ -30,47 +30,55 @@
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("BookID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="BookTitle">
+                <asp:TemplateField HeaderText="Date">
                     
                     <ItemTemplate>
-                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("BookTitle") %>'></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("DatePurchase") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Quantity">
-                    
-                    <ItemTemplate>
-                        <asp:Label ID="Label5" runat="server" Text='<%# Bind("Qty") %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-
-
-                <asp:TemplateField HeaderText="Price">
+                  <asp:TemplateField HeaderText="Price">
                     
                     <ItemTemplate>
                         <asp:Label ID="Label6" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Total">
+                  <asp:TemplateField HeaderText="Discount">
                     
                     <ItemTemplate>
-                        <asp:Label ID="Label7" runat="server" Text='<%# Bind("Total") %>'></asp:Label>
+                        <asp:Label ID="Label6" runat="server" Text='<%# Bind("Discount") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                  <asp:TemplateField HeaderText="Status">
                  <ItemTemplate>
-                        <asp:Label ID="Label7" runat="server" Text='<%# Bind("Status") %>'></asp:Label>
+                        <asp:Label ID="Label7" runat="server" Text='<%# Bind("OrderStatus") %>'></asp:Label>
                     </ItemTemplate>
-              <EditItemTemplate>
-                         <asp:RadioButtonList ID="radioSize" runat="server">
-                            <asp:ListItem Text="Confirm" Value="S" />
-                            <asp:ListItem Text="Cancel" Value="M" />
-                            <asp:ListItem Text="Deliver" Value="L" />
-                        </asp:RadioButtonList>
-
+                      <EditItemTemplate>
+                          <asp:DropDownList ID="ddlStatus" runat="server">
+                             <asp:ListItem Text="Processed" Value="confirm" />
+                            <asp:ListItem Text="Completed" Value="Cancel" />
+                            <asp:ListItem Text="Canceled" Value="Deliver" />
+                          </asp:DropDownList>
+                        
+                            
+                       
                     </EditItemTemplate>
-                      </asp:TemplateField>
+                     </asp:TemplateField>
+                <asp:TemplateField HeaderText="Quantity">
+                    
+                    <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%# Bind("Quantity") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+
+
+              
+               
+
+             
+                     
                 <asp:CommandField ShowEditButton="True" />
               
             </Columns>
         </asp:GridView>
 </asp:Content>
+
