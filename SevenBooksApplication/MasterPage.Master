@@ -47,29 +47,25 @@
                         </tr>
                         <tr>
                             <td colspan="2">
+                                <br />
                                 <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
                                     <asp:TextBox ID="tbSearch" runat="server" CssClass="auto-style2" Width="434px"></asp:TextBox>
                                     <asp:Button ID="btnSearch" runat="server" Text="Search" />
                                 </asp:Panel>
+                                <br />
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="bgColour">
                                 <asp:Panel ID="Panel3" runat="server" Style="text-align: center; width: 100%">
-                                    <ul>
-                                        <li>
-                                            <asp:Button class="btnHead" ID="btnChildren" runat="server" Text="Children" />
-                                        </li>
-                                        <li>
+                                    
+                                            <asp:Button class="btnHead" ID="btnChildren" runat="server" Text="Children" BorderStyle="None" />
+                                    
                                             <asp:Button class="btnHead" ID="btnFinance" runat="server" Text="Finance" BorderStyle="None" />
-                                        </li>
-                                        <li>
+                                       
                                             <asp:Button class="btnHead" ID="btnNonFiction" runat="server" Text="Non-Fiction" BorderStyle="None" />
-                                        </li>
-                                        <li>
+                                        
                                             <asp:Button class="btnHead" ID="btnTechnical" runat="server" Text="Technical" BorderStyle="None" />
-                                        </li>
-                                    </ul>
 
                                 </asp:Panel>
                             </td>
