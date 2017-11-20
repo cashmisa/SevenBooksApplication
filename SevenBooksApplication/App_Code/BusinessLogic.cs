@@ -7,12 +7,22 @@ namespace SevenBooksApplication.App_Code
     public class BusinessLogic
     {
         //BookContext context = new BookContext();
-        public static void AddBook(Book book)
+        public static void AddBook(string title,string categoryName, string isbn,string author, int stock , decimal price)
         {
             using (BookContext context = new BookContext())
             {
+                Book book = new Book
+                {
+                 Title = title,
+                 ISBN = isbn,
+                Author = author,
+                Stock = stock,
+                CategoryID = getCategoryID(categoryName),
+                Price = price
+            };
                 context.Books.Add(book);
                 context.SaveChanges();
+                
             }
         }
         public static void UpdateBook(int BookID, string Title, int CategoryID, string ISBN, string Author, int Stock, decimal Price)

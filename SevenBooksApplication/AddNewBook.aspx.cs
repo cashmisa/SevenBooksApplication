@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication;
-using System.Xml.Linq;
+using SevenBooksApplication.App_Code;
 
 namespace SevenBooksApplication
 {
@@ -14,10 +14,30 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
         }
-        
 
-       
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string title = tbTitle.Text;
+            string author = tbAuthor.Text;
+
+            string isbn = tbISBN.Text;
+            string price = tbPrice.Text;
+            string categoryName = ddlCategory.SelectedValue;
+            string stock = tbQuantity.Text;
+
+           
+            try
+            {
+                
+                BusinessLogic.AddBook(title, categoryName, isbn,author,stock ,price);
+               
+            }
+            catch (Exception exp)
+            {
+                Response.Write(exp.ToString());
+            }
+        }
+
     }
 }
