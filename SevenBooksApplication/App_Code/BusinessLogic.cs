@@ -6,7 +6,7 @@ using SevenBooksApplication.Models;
 
 namespace SevenBooksApplication.App_Code
 {
-    public class BussinessLogic
+    public class BusinessLogic
     {
         //BookContext context = new BookContext();
         public static void AddBook(Book book)
