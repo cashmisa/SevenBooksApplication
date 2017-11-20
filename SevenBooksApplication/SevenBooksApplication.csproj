@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -34,6 +34,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -230,6 +233,7 @@
     <Content Include="Image\9781619634480.jpg" />
     <Content Include="Image\9781911015222.jpg" />
     <Content Include="Image\StoreLogo.jpg" />
+    <Content Include="LoginRegis.aspx" />
     <Content Include="MyAccount.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -317,6 +321,12 @@
     </Compile>
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegis.aspx.cs">
+      <DependentUpon>LoginRegis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegis.aspx.designer.cs">
+      <DependentUpon>LoginRegis.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
@@ -573,7 +583,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65414/</IISUrl>
+          <IISUrl>http://localhost/SevenBooksApplication</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
