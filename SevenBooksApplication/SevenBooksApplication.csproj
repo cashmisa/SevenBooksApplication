@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -272,6 +272,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="PasswordRecovery.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="SearchResults.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -452,6 +453,13 @@
     </Compile>
     <Compile Include="CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

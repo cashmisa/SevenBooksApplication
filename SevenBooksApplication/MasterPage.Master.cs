@@ -79,5 +79,17 @@ namespace SevenBooksApplication
                 btnWelcome.Text = string.Format("Welcome, {0}", userName);
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != string.Empty) {
+                Response.Redirect("~/SearchResults.aspx?SearchBy" + ddlSearch.Text + "&Term" + tbSearch.Text);
+            }else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+
+        }
+          
     }
 }

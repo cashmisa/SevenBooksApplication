@@ -49,8 +49,13 @@
                             <td colspan="2">
                                 <br />
                                 <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
+                                    <asp:DropDownList ID="ddlSearch" runat="server">
+                                        <asp:ListItem>Title</asp:ListItem>
+                                        <asp:ListItem>ISBN</asp:ListItem>
+                                        <asp:ListItem>Category</asp:ListItem>
+                                    </asp:DropDownList>
                                     <asp:TextBox ID="tbSearch" runat="server" CssClass="auto-style2" Width="434px"></asp:TextBox>
-                                    <asp:Button class="btnSc" ID="btnSearch" runat="server" Text="Search" BorderStyle="None" />
+                                    <asp:Button class="btnSc" ID="btnSearch" runat="server" Text="Search" BorderStyle="None" OnClick="btnSearch_Click" />
                                 </asp:Panel>
                                 <br />
                             </td>
