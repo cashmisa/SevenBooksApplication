@@ -13,11 +13,26 @@ namespace SevenBooksApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (FileUpload1.HasFile)
+            {
+                try
+                {
+                    string filename = FileUpload1.FileName;
+                    FileUpload1.SaveAs(Server.MapPath("~/files/") + filename);
+                    StatusLabel.Text = "Upload status: File uploaded!";
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text =
+                    "Upload status: The file could not be uploaded." +
+                    "The following error occurred: " + ex.Message;
+                }
+            }
             string title = tbTitle.Text;
             string author = tbAuthor.Text;
 

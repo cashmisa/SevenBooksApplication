@@ -12,11 +12,13 @@ namespace SevenBooksApplication
 {
     public partial class BookDetails : System.Web.UI.Page
     {
+        int bookID;
         protected void Page_Load(object sender, EventArgs e)
         {
-           // int BookID = 4;
-          String ISBN = (String)Session["ISBN"];
-           Book b=BusinessLogic.SearchBookByISBN(ISBN);
+           // int bookID = 4;
+         bookID =Convert.ToInt32(Request.QueryString["bookID"]);
+
+            Book b =BusinessLogic.SearchBookByBookId(bookID);
             string isbn = b.ISBN;
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;
@@ -34,9 +36,17 @@ namespace SevenBooksApplication
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected void update_button(object sender, EventArgs e)
         {
            
+
+            Response.Redirect("UpdateBook.aspx?BookID="+bookID);
+        }
+
+        protected void addCart(object sender, EventArgs e)
+        {
+
         }
     }
 }
