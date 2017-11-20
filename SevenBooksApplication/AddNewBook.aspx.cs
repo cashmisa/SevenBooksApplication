@@ -8,7 +8,7 @@ using SevenBooksApplication;
 
 namespace SevenBooksApplication
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class AddNewBook : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
