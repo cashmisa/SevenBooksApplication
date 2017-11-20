@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <asp:ListView ID="lvBooks" runat="server">
-    </asp:ListView>
+    <asp:GridView ID="gvBook" runat="server"></asp:GridView>
 
     </asp:Content>

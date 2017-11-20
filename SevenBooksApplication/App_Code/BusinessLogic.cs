@@ -59,5 +59,10 @@ namespace SevenBooksApplication.App_Code
                 return context.Books.Where(x => x.BookID == BookID).ToList<Book>();
             }
         }
+
+        static void Main()
+        {
+
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace SevenBooksApplication
         {
             if (!IsPostBack)
             {
-                BusinessLogic logic = new BusinessLogic();
+                gvBook.DataSource = BusinessLogic.SearchAllBooks();
+                gvBook.DataBind();
             }
         }
     }
