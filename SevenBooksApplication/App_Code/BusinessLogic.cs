@@ -54,11 +54,11 @@ namespace SevenBooksApplication.App_Code
                 return context.Books.Where(x=>x.Title == Title).ToList<Book>();
             }
         }
-        public static List<Book> SearchBookByID(int BookID)
+        public static Book SearchBookByID(int BookID)
         {
             using(BookContext context = new BookContext())
             {
-                return context.Books.Where(x=>x.BookID == BookID).ToList<Book>();
+                return context.Books.Where(x=>x.BookID == BookID).ToList<Book>()[0];
             }
         }
     }

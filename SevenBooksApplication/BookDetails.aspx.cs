@@ -15,8 +15,9 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            string ISBN = (string)Session["ISBN"];
-           Book b=BussinessLogic.GetBookDetails(ISBN);
+            int BookID = (int)Session["bookID"];
+           Book b=BusinessLogic.SearchBookByID(BookID);
+            string isbn = b.ISBN;
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;
             tbPrice.Text =Convert.ToString(b.Price);
@@ -25,7 +26,7 @@ namespace SevenBooksApplication
             {
                 lbQty.DataMember = i+"";
             }
-
+            Image1.ImageUrl=string.Format("image/{0}.jpg",isbn);
 
 
         }
