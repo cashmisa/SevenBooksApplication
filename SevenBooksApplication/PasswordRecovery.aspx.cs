@@ -4,15 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SevenBooksApplication;
 
 namespace SevenBooksApplication
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class PasswordRecovery : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

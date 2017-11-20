@@ -10,15 +10,24 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Admin {
+    public partial class PasswordRecovery {
         
         /// <summary>
-        /// Label1 control.
+        /// PasswordRecovery1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.PasswordRecovery PasswordRecovery1;
+        
+        /// <summary>
+        /// regUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink regUser;
     }
 }
