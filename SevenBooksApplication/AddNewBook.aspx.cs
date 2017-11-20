@@ -22,9 +22,9 @@ namespace SevenBooksApplication
             string author = tbAuthor.Text;
 
             string isbn = tbISBN.Text;
-            string price = tbPrice.Text;
+            decimal price =Convert.ToDecimal(tbPrice.Text);
             string categoryName = ddlCategory.SelectedValue;
-            string stock = tbQuantity.Text;
+            int stock =Convert.ToInt32(tbQuantity.Text);
 
            
             try

@@ -38,7 +38,7 @@
               <br />
                <br />
 
-               <asp:Button ID="Button1" runat="server" Text="Add to Cart" />
+               <asp:Button ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
            </td>
        </tr>
    </table>
