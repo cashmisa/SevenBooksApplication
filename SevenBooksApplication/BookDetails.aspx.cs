@@ -14,18 +14,21 @@ namespace SevenBooksApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            int BookID = (int)Session["bookID"];
+            int BookID = 4;
+           // int BookID = (int)Session["bookID"];
            Book b=BusinessLogic.SearchBookByID(BookID);
             string isbn = b.ISBN;
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;
             tbPrice.Text =Convert.ToString(b.Price);
             int stock = b.Stock;
+            int[] stockArray = new int[stock];
             for(int i=0;i<stock;i++)
             {
-                lbQty.DataMember = i+"";
+                stockArray[i] = i + 1;
             }
+            ddlQty.DataSource = stockArray;
+            ddlQty.DataBind();
             Image1.ImageUrl=string.Format("image/{0}.jpg",isbn);
 
 
