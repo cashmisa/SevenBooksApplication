@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -34,6 +34,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddNewBook.aspx" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
     <Content Include="Image\9780062390851.jpg" />
@@ -208,6 +212,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="PasswordRecovery.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="SearchResults.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
@@ -250,6 +255,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewBook.aspx.cs">
+      <DependentUpon>AddNewBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewBook.aspx.designer.cs">
+      <DependentUpon>AddNewBook.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BusinessLogic.cs" />
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
@@ -285,6 +297,13 @@
     </Compile>
     <Compile Include="CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -397,7 +416,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65414/</IISUrl>
+          <IISUrl>http://localhost/SevenBooksApplication</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

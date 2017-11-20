@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.Models;
-
+using System.Web.Security;
+using System.Security.Principal;
 
 namespace SevenBooksApplication
 {
@@ -35,16 +36,79 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if(cartList.Count == 0)
+            if (cartList.Count == 0)
             {
                 btnCart.Text = "View Cart";
-            }else
+            }
+            else
             {
                 btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
             }
 
+            
+            string userName = "";
+
+
+
+    //        if (System.Web.HttpContext.Current != null &&
+    //System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+    //        {
+    //            System.Web.Security.MembershipUser usr = Membership.GetUser();
+    //            if (usr != null)
+    //            {
+    //                userName = HttpContext.Current.User.Identity.Name;
+    //            }
+    //        }
+
+            //if (Roles.FindUsersInRole("admin", userName).Length == 0)
+            //{
+            //    btnManageBook.Visible = false;
+            //    btnManageCustomer.Visible = false;
+            //}
+            //else
+            //{
+            //    btnManageBook.Visible = true;
+            //    btnManageCustomer.Visible = true;
+            //}
+
+            if (userName == "")
+            {
+                btnWelcome.Text = "Welcome, Guest";
+            }else
+            {
+                btnWelcome.Text = string.Format("Welcome, {0}", userName);
+            }
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != string.Empty) {
+                Response.Redirect("~/SearchResults.aspx?SearchBy=" + ddlSearch.Text + "&Term=" + tbSearch.Text);
+            }else
+            {
+                Response.Redirect("~/Default.aspx");
+            }
 
+        }
+
+        protected void btnChildren_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnChildren.Text);
+        }
+
+        protected void btnFinance_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnFinance.Text);
+        }
+
+        protected void btnNonFiction_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnNonFiction.Text);
+        }
+
+        protected void btnTechnical_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnTechnical.Text);
+        }
     }
 }

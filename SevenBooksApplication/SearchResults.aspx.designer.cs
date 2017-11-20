@@ -10,15 +10,15 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Admin {
+    public partial class SearchResults {
         
         /// <summary>
-        /// GridView1 control.
+        /// repBookListSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Repeater repBookListSearch;
     }
 }
