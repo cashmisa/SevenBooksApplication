@@ -8,6 +8,7 @@
     li {
         display: inline;
     }
+
     .auto-style2 {
         margin-left: 0px;
     }
@@ -28,45 +29,45 @@
                         <tr>
                             <td class="bgColour" colspan="2">
                                 <asp:Panel class="bgColourInLineBlockLeft" ID="Panel4" runat="server" Style="text-align: right">
-                                <asp:Button class="btnHead" ID="btnHome" runat="server" Text="Home" BorderStyle="None" />
-                                <asp:HiddenField ID="hdfUserID" runat="server" />
+                                    <asp:Button class="btnHead" ID="btnHome" runat="server" Text="Home" BorderStyle="None" />
+                                    <asp:HiddenField ID="hdfUserID" runat="server" />
                                 </asp:Panel>
 
-                                
-                                    <asp:Panel class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
-                                        
-                                        <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
-                                        <asp:Button class="btnHead"  ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" />
-                                        <asp:LoginStatus class="btnHead"  ID="LoginStatus" runat="server" LoginText="Login / Register" />
-                                    </asp:Panel>
+
+                                <asp:Panel class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
+
+                                    <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
+                                    <asp:Button class="btnHead" ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" />
+                                    <asp:LoginStatus class="btnHead" ID="LoginStatus" runat="server" LoginText="Login / Register" />
+                                </asp:Panel>
 
 
 
-                                </td>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <asp:Panel ID="Panel2" runat="server" Style ="text-align:center">
+                                <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
                                     <asp:TextBox ID="tbSearch" runat="server" CssClass="auto-style2" Width="434px"></asp:TextBox>
                                     <asp:Button ID="btnSearch" runat="server" Text="Search" />
                                 </asp:Panel>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="2" class="bgColour">
                                 <asp:Panel ID="Panel3" runat="server" Style="text-align: center; width: 100%">
                                     <ul>
                                         <li>
-                                            <a runat="server" href="~/Account/Login">Children</a>
+                                            <asp:Button class="btnHead" ID="btnChildren" runat="server" Text="Children" />
                                         </li>
                                         <li>
-                                            <a runat="server" href="~/Account/Login">Finance</a>
+                                            <asp:Button class="btnHead" ID="btnFinance" runat="server" Text="Finance" BorderStyle="None" />
                                         </li>
                                         <li>
-                                            <a runat="server" href="~/Account/Login">Non-Fiction</a>
+                                            <asp:Button class="btnHead" ID="btnNonFiction" runat="server" Text="Non-Fiction" BorderStyle="None" />
                                         </li>
                                         <li>
-                                            <a runat="server" href="~/Account/Login">Technical</a>
+                                            <asp:Button class="btnHead" ID="btnTechnical" runat="server" Text="Technical" BorderStyle="None" />
                                         </li>
                                     </ul>
 
@@ -74,11 +75,11 @@
                             </td>
                         </tr>
                         <tr>
-                            
+
                             <td colspan="2">
 
-                                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                                    </asp:ContentPlaceHolder>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                </asp:ContentPlaceHolder>
 
                             </td>
                         </tr>
@@ -88,7 +89,8 @@
         </div>
 
         <footer>
-            <p>&copy; <%: DateTime.Now.Year %>- SevenBooks<asp:Image ID="Image1" runat="server" Height="74px" ImageUrl="~/Image/StoreLogo.jpg" Width="163px" />
+            <p>
+                &copy; <%: DateTime.Now.Year %>- SevenBooks<asp:Image ID="Image1" runat="server" Height="74px" ImageUrl="~/Image/StoreLogo.jpg" Width="163px" />
             </p>
         </footer>
     </form>

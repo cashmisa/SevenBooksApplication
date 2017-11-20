@@ -121,6 +121,42 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Panel Panel3;
         
         /// <summary>
+        /// btnChildren control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChildren;
+        
+        /// <summary>
+        /// btnFinance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFinance;
+        
+        /// <summary>
+        /// btnNonFiction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNonFiction;
+        
+        /// <summary>
+        /// btnTechnical control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTechnical;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
