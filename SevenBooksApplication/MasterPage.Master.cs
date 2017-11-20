@@ -64,11 +64,13 @@ namespace SevenBooksApplication
             {
                 btnManageBook.Visible = true;
                 btnManageCustomer.Visible = true;
+                btnManageDiscount.Visible = true;
             }
             else
             {
                 btnManageBook.Visible = false;
                 btnManageCustomer.Visible = false;
+                btnManageDiscount.Visible = false;
             }
         }
 
@@ -112,6 +114,12 @@ namespace SevenBooksApplication
 
         protected void btnManageCustomer_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnManageDiscount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SetDiscount.aspx");
         }
     }
 }

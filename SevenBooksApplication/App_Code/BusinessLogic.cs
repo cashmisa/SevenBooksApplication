@@ -1,6 +1,7 @@
 ﻿using SevenBooksApplication.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace SevenBooksApplication.App_Code
 {
@@ -126,6 +127,41 @@ namespace SevenBooksApplication.App_Code
                 Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
                 order.OrderStatus = OrderStatus;
                 context.SaveChanges();
+            }
+        }
+
+        public static void CreateDiscount(DateTime startDate, DateTime endDate, decimal percent)
+        {
+            using (BookContext context = new BookContext())
+            {
+                Discount discount = new Discount()
+                {
+                    StartDate = startDate,
+                    EndDate = endDate,
+                    PercentDiscount = percent
+                };
+
+                context.Discounts.Add(discount);
+                context.SaveChanges();
+            }
+        }
+
+        //
+        // Summary:
+        //     Gets the latest discount percent.
+        //
+        // Returns:
+        //     Discount percent (eg. 0.50). Return 0 if expired or no current discount.
+        public static decimal GetCurrentDiscount()
+        {
+            using (BookContext context = new BookContext())
+            {
+                Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
+                if(discount == null || discount.EndDate > DateTime.Today)
+                {
+                    return 0;
+                }
+                return discount.PercentDiscount;
             }
         }
     }
