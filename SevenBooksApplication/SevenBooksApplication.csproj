@@ -305,7 +305,7 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BLL\BussinessLogic.cs" />
+    <Compile Include="App_Code\BusinessLogic.cs" />
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -453,7 +453,6 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\BusinessLogic.cs" />
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
