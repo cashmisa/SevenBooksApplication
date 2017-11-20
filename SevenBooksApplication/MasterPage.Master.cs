@@ -34,14 +34,6 @@ namespace SevenBooksApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (hdfUserID.Value == null)
-            {
-                btnLogin.Text = "Login / Register";
-            }else
-            {
-                btnLogin.Text = "Logout";
-
-            }
 
             if(cartList.Count == 0)
             {
@@ -51,18 +43,6 @@ namespace SevenBooksApplication
                 btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
             }
 
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            if(btnLogin.Text == "Login / Register")
-            {
-                Response.Redirect("HomePage");
-            }
-            else if (btnLogin.Text == "Logout")
-            {
-                Response.Redirect("HomePage");
-            }
         }
 
 

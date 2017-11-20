@@ -8,6 +8,9 @@
     li {
         display: inline;
     }
+    .auto-style2 {
+        margin-left: 0px;
+    }
 </style>
 <!DOCTYPE html>
 
@@ -28,10 +31,10 @@
 
                                 <td>
                                     <asp:Panel ID="Panel1" runat="server" Style="text-align: right; width: 100%">
+                                        
                                         <asp:Button ID="btnWelcome" runat="server" Text="Welcome, Guest" />
                                         <asp:Button ID="btnCart" runat="server" Text="View Cart" />
-                                        <asp:Button ID="btnLogin" runat="server" Text="Login / Register" OnClick="btnLogin_Click" />
-
+                                        <asp:LoginStatus ID="LoginStatus" runat="server" BorderStyle="Groove" LoginText="Login / Register" />
                                     </asp:Panel>
 
 
@@ -40,8 +43,8 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <asp:Panel ID="Panel2" runat="server">
-                                    <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
+                                <asp:Panel ID="Panel2" runat="server" Style ="text-align:center">
+                                    <asp:TextBox ID="tbSearch" runat="server" CssClass="auto-style2" Width="434px"></asp:TextBox>
                                     <asp:Button ID="btnSearch" runat="server" Text="Search" />
                                 </asp:Panel>
                             </td>
