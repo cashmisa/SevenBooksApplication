@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace SevenBooksApplication.Models
 {
@@ -33,6 +30,15 @@ namespace SevenBooksApplication.Models
         public decimal Price { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public Book() { }
+
+        public Book(string title, string isbn, string author)
+        {
+            Title = title;
+            ISBN = isbn;
+            Author = author;
+        }
     }
 
     [Table("Category")]
@@ -82,5 +88,7 @@ namespace SevenBooksApplication.Models
                 .WithRequired(e => e.Category)
                 .WillCascadeOnDelete(false);
         }
+
+
     }
 }
