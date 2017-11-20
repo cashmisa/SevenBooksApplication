@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#"  MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SevenBooksApplication._Default" %>
+<%@ Import Namespace="SevenBooksApplication" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
