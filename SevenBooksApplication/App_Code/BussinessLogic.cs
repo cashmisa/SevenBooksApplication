@@ -8,13 +8,13 @@ namespace SevenBooksApplication.App_Code
 {
     public class BussinessLogic
     {
-        BookContext context = new BookContext();
+        //BookContext context = new BookContext();
         public static void AddBook(Book book)
         {
-            using (BookContext entities = new BookContext())
+            using (BookContext context = new BookContext())
             {
-                entities.Books.Add(book);
-                entities.SaveChanges();
+                context.Books.Add(book);
+                context.SaveChanges();
             }
         }
         public static void UpdateBook(int BookID,string Title,int CategoryID,string ISBN,string Author,int Stock,decimal Price)
@@ -42,16 +42,23 @@ namespace SevenBooksApplication.App_Code
         }
         public static List<Book> SearchAllBooks()
         {
-            using(BookContext entities = new BookContext())
+            using(BookContext context = new BookContext())
             {
-                return entities.Books.ToList<Book>();
+                return context.Books.ToList<Book>();
             }
         } 
         public static List<Book> SearchBookByTitle(string Title)
         {
-            using(BookContext entities = new BookContext())
+            using(BookContext context = new BookContext())
             {
-                return entities.Books.Where(x=>x.Title == Title).ToList<Book>();
+                return context.Books.Where(x=>x.Title == Title).ToList<Book>();
+            }
+        }
+        public static List<Book> SearchBookByID(int BookID)
+        {
+            using(BookContext context = new BookContext())
+            {
+                return context.Books.Where(x=>x.BookID == BookID).ToList<Book>();
             }
         }
     }
