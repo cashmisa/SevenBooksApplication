@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddNewBook.aspx.cs" Inherits="SevenBooksApplication.Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UpdateBook.aspx.cs" Inherits="SevenBooksApplication.UpdateBook" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <table>
+
+     <table>
         <tr>
             <td>
                 Title
@@ -10,10 +11,10 @@
             </td>
         </tr>
         <tr>
-            <td style="height: 53px">
+            <td>
                 Author
             </td>
-            <td style="height: 53px">
+            <td>
                 <asp:TextBox ID="tbAuthor" runat="server"></asp:TextBox> 
             </td>
         </tr>
@@ -36,11 +37,9 @@
          <tr>
             <td>
                 image
-                
             </td>
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Label ID="statuslabel" runat="server" Text="Label"></asp:Label>
             </td>
              
         </tr>
@@ -58,12 +57,12 @@
                 Qutantity
             </td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="tbQuantity" runat="server"></asp:TextBox>
+                </td>
         </tr>
     </table>
-
     <br />
     <br />
 
-    <asp:Button ID="btAdd" runat="server" Text="Add" OnClick="Add_onClick" Width="122px" />
-    </asp:Content>
+    <asp:Button ID="btUpdate" runat="server" Text="Update" />
+</asp:Content>

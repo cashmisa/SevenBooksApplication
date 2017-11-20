@@ -37,9 +37,18 @@
 
               <br />
                <br />
+              
+                           <asp:Button ID="Button1" runat="server" Text="Add to Cart" OnClick="addCart" /><br />
 
-               <asp:Button ID="Button1" runat="server" Text="Add to Cart" OnClick="Button1_Click" />
+                            <asp:Button ID="Button2" runat="server" Text="UpdateBook" OnClick="update_button" />
+                       
+              
+
+              
+               <br />
+               <br />
            </td>
        </tr>
    </table>
+    
 </asp:Content>

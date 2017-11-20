@@ -215,6 +215,7 @@
     <Content Include="CreateUser.aspx" />
     <Content Include="SearchResults.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
+    <Content Include="UpdateBook.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
@@ -305,6 +306,13 @@
     </Compile>
     <Compile Include="SearchResults.aspx.designer.cs">
       <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBook.aspx.cs">
+      <DependentUpon>UpdateBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateBook.aspx.designer.cs">
+      <DependentUpon>UpdateBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
