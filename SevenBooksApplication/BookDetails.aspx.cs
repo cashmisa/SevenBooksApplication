@@ -12,11 +12,12 @@ namespace SevenBooksApplication
         Book b;
         protected void Page_Load(object sender, EventArgs e)
         {
-            String isbn = Request.QueryString["ISBN"];
+            isbn = Request.QueryString["ISBN"];
             b = BusinessLogic.SearchBookByISBN(isbn);
 
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;
+            Title = b.Title + " - SevenBooks";
             tbPrice.Text = Convert.ToString(b.Price);
             int stock = b.Stock;
             int[] stockArray = new int[stock];
