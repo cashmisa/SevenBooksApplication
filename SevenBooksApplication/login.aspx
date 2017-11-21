@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Login/ Register" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SevenBooksApplication.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="StyleSheetSevenBook1.css" type="text/css"/>
         <table style="margin:auto">
             <tr>
                 <td class="auto-style3">
@@ -8,7 +9,7 @@
                         <LoginButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                     </asp:Login>
                 </td>
-                <td>
+                <td style="border: none">
                     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick" OnCreatedUser="CreateUserWizard1_CreatedUser" BorderStyle="None" Height="100px" Width="653px">
                         <CreateUserButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                         <WizardSteps>

@@ -75,9 +75,9 @@
                                 </asp:Panel>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="border: none">
 
-                            <td colspan="2">
+                            <td colspan="2" style="border: none">
                                 <br />
                                 
                                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
