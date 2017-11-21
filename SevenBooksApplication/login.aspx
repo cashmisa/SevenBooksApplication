@@ -5,12 +5,12 @@
             <tr>
                 <td class="auto-style3">
                     <asp:Login ID="Login1" runat="server" Height="300px" OnLoggedIn="Login1_LoggedIn" BorderStyle="None" Width="407px">
-                        <LoginButtonStyle BorderStyle="None" CssClass="btnHead" Font-Bold="True" />
+                        <LoginButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                     </asp:Login>
                 </td>
                 <td>
                     <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick" OnCreatedUser="CreateUserWizard1_CreatedUser" BorderStyle="None" Height="100px" Width="653px">
-                        <CreateUserButtonStyle BorderStyle="None" CssClass="btnHead" Font-Bold="True" />
+                        <CreateUserButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                         <WizardSteps>
                             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                             </asp:CreateUserWizardStep>

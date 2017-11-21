@@ -12,10 +12,9 @@ namespace SevenBooksApplication
         Book b;
         protected void Page_Load(object sender, EventArgs e)
         {
-           isbn = "9780812995800";
-           // String isbn = Request.QueryString["ISBN"];
-           b = BusinessLogic.SearchBookByISBN(isbn);
-            
+            String isbn = Request.QueryString["ISBN"];
+            b = BusinessLogic.SearchBookByISBN(isbn);
+
             tbAuthor.Text = b.Author;
             tbTitle.Text = b.Title;
             tbPrice.Text = Convert.ToString(b.Price);
@@ -38,19 +37,18 @@ namespace SevenBooksApplication
             else
             {
                 btAdd.Visible = true;
-               
+
             }
-            
+
         }
 
         protected void addCart(object sender, EventArgs e)
         {
-            List<Book> cart =(List<Book>)Session["cartList"];
-            cart.Add(b);
-
+            ((List<Book>)Session["cartList"]).Add(b);
+            Response.Redirect(Request.RawUrl);
             SetVisible();
-           
         }
+        
 
         protected void update_button(object sender, EventArgs e)
         {
@@ -66,7 +64,7 @@ namespace SevenBooksApplication
             Response.Redirect("Default.aspx");
 
         }
-        
+
         public void SetVisible()
         {
             btAdd.Visible = false;
