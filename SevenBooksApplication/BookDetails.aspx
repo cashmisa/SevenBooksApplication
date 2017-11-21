@@ -37,9 +37,9 @@
               <br />
                <br />
               
-                           <asp:Button ID="btAdd" runat="server" Text="Add to Cart" OnClick="addCart" Visible="False" /><br />
+                           <asp:Button ID="btAdd" class="btn-primary" runat="server" Text="Add to Cart" OnClick="addCart" Visible="False" BorderStyle="None" /><br />
 
-                            <asp:Button ID="btUpdate" runat="server" Text="UpdateBook" OnClick="update_button" Visible="False" />
+                            <asp:Button ID="btUpdate" class="btn-primary" runat="server" Text="UpdateBook" OnClick="update_button" Visible="False" BorderStyle="None" />
                        <br />
                <br />
 
