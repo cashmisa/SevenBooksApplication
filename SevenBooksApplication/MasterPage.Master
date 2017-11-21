@@ -24,6 +24,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -78,6 +79,16 @@
                         <tr style="border: none">
 
                             <td colspan="2" style="border: none">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                <asp:Timer ID="Timer1" runat="server" Interval="5000"></asp:Timer>
+                                <asp:Panel ID="Panel5" runat="server">
+                                    <div class="bgColour" style="text-align:center">
+                                    <h1><asp:Label ID="Label1" runat="server" Text="text"></asp:Label></h1>
+                                        </div>
+                                </asp:Panel>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                                 <br />
                                 
                                 <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -18,6 +18,7 @@
                 <tr><td class="title"><asp:Label CssClass="lb-book-list" ID = "lbTitle" runat="server" text ='<%#Eval("Title") %>'></asp:Label></td></tr>
                 <tr><td class="author"><asp:Label CssClass="lb-book-list" ID = "lbAuthor" runat="server" text ='<%#Eval("Author") %>'></asp:Label></td></tr>
                 <tr><td class ="price"><asp:Label CssClass="lb-book-list" ID = "lbPrice" runat="server" text ='<%# "S$" + Eval("Price") %>' ></asp:Label></td></tr>
+
                 <tr><td class="add-to-cart"><asp:Button CssClass="btn-primary"  runat="server" ID="btnAddtoCart"
                     Text="Add to cart" CommandName="AddToCart" CommandArgument='<%#Eval("ISBN")%>' /></td></tr>
                 

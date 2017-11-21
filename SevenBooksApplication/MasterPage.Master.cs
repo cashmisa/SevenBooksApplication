@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Security;
+using SevenBooksApplication.App_Code;
+using System.Drawing;
 
 namespace SevenBooksApplication
 {
@@ -68,6 +70,17 @@ namespace SevenBooksApplication
                 //btnManageOrder.Visible = false;
                 //btnManageDiscount.Visible = false;
             }
+
+
+            Color[] colourarray = new Color[] { Color.Cyan, Color.LightGoldenrodYellow, Color.WhiteSmoke, Color.Chartreuse, Color.Ivory};
+            Color[] colourarray2 = new Color[] { Color.Black, Color.CornflowerBlue, Color.LightSlateGray, Color.MidnightBlue, Color.CadetBlue };
+            Random r = new Random();
+
+            Label1.Text ="Storewide Discount " + String.Format("{0}",BusinessLogic.GetCurrentDiscount()*100) +"% " + " until" + BusinessLogic.;
+            Label1.ForeColor = colourarray[r.Next(0, colourarray.Length)];
+            Label1.DataBind();
+            Label1.BackColor = colourarray2[r.Next(0, colourarray2.Length)];
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
