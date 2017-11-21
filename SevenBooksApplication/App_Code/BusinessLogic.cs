@@ -26,11 +26,11 @@ namespace SevenBooksApplication.App_Code
 
             }
         }
-        public static void UpdateBook(int BookID, string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
+        public static void UpdateBook(int BookID,string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
         {
             using (BookContext context = new BookContext())
             {
-                Book book = context.Books.Where(x => x.BookID == BookID).First();
+                Book book = context.Books.Where(x => x.ISBN == ISBN).First();
                 book.Title = Title;
                 book.CategoryID = getCategoryID(CategoryName);
                 book.ISBN = ISBN;
