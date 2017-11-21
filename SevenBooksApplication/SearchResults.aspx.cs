@@ -32,7 +32,8 @@ namespace SevenBooksApplication
                             break;
                         default:
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByTitle(searchTerm);
-                            break;                                                  
+                            break;                                        
+                            //default case if person edit the query string in address bad          
                     }
                 }else
                 {
