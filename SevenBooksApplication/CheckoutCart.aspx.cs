@@ -18,18 +18,28 @@ namespace SevenBooksApplication
             if (!IsPostBack)
             {
                 List<Book> bookList = Session["cartList"] as List<Book>;
-                Dictionary<string, int> bookCounts = bookList.GroupBy(x => x.ISBN)
-                                                    .ToDictionary(k => k.Key, v => v.Count());
 
-                List<GridDisplayData> dataList = new List<GridDisplayData>();
-
-                foreach(var key in bookCounts.Keys)
+                if(bookList.Count == 0)
                 {
-                    dataList.Add(new GridDisplayData { ISBN = key, Quantity = bookCounts[key] });
+                    MultiView1.ActiveViewIndex = 0;
                 }
+                else
+                {
+                    MultiView1.ActiveViewIndex = 1;
 
-                GridView1.DataSource = dataList;
-                GridView1.DataBind();
+                    Dictionary<string, int> bookCounts = bookList.GroupBy(x => x.ISBN)
+                                    .ToDictionary(k => k.Key, v => v.Count());
+
+                    List<GridDisplayData> dataList = new List<GridDisplayData>();
+
+                    foreach (var key in bookCounts.Keys)
+                    {
+                        dataList.Add(new GridDisplayData { ISBN = key, Quantity = bookCounts[key] });
+                    }
+
+                    GridView1.DataSource = dataList;
+                    GridView1.DataBind();
+                }
             }
         }
 
@@ -47,18 +57,19 @@ namespace SevenBooksApplication
                 Image img = e.Row.Cells[(int)ColumnIndex.Title].FindControl("Image1") as Image;
                 img.ImageUrl = string.Format("~/image/{0}.jpg", data.ISBN);
                 Book book = BusinessLogic.SearchBookByISBN(data.ISBN);
+                img.ToolTip = book.Title;
                 img.AlternateText = book.Title;
 
                 Label lblQty = e.Row.Cells[(int)ColumnIndex.Quantity].FindControl("lblQty") as Label;
                 lblQty.Text = data.Quantity.ToString();
 
                 Label lblPrice = e.Row.Cells[(int)ColumnIndex.Price].FindControl("lblPrice") as Label;
-                lblPrice.Text = book.Price.ToString();
+                lblPrice.Text = string.Format("{0:c}", book.Price);
 
                 Label lblTotalPrice = e.Row.Cells[(int)ColumnIndex.TotalPrice].FindControl("lblTotalPrice") as Label;                
                 decimal currentDiscount = BusinessLogic.GetCurrentDiscount();
                 decimal totalPrice = book.Price * data.Quantity * (1 - currentDiscount);
-                lblTotalPrice.Text = totalPrice.ToString();
+                lblTotalPrice.Text = string.Format("{0:c}", totalPrice);
 
                 decimal discountAmt = book.Price * data.Quantity * currentDiscount;
 
