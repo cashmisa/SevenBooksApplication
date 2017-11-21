@@ -44,8 +44,7 @@ namespace SevenBooksApplication
         {
             if (e.CommandName == "AddToCart")
             {
-                List<Book> cartBooks = (List<Book>)Session["cartList"];
-                cartBooks.Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
+                ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
             }
         }
     }
