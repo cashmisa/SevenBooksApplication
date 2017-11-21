@@ -4,34 +4,13 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="StyleSheetSevenBook1.css" rel="stylesheet" type="text/css" />
-    <%--<asp:GridView ID="gvBook" runat="server" AutoGenerateColumns="False" BorderStyle="Dotted" CellPadding="5">
-        <Columns>
-            <asp:TemplateField>
-                
-                <ItemTemplate>
-                    <asp:Image ID="imgBook" runat="server" Width="200px"
-                        ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:Image>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:BoundField DataField="Title" HeaderText="Title" />
-            <asp:BoundField DataField="Author" HeaderText="Author" />
-            <asp:BoundField DataField="Price" HeaderText="Price (SGD)" />
-            <asp:TemplateField>
-                
-                <ItemTemplate>
-                    <asp:Button ID="btnAddtoCart" runat="server" Text="Add to cart"></asp:Button>
-                </ItemTemplate>
-            </asp:TemplateField>
-            
-        </Columns>
-    </asp:GridView>--%>
     
    <br/>
     <asp:Repeater ID="repBookList" runat="server" OnItemCommand="AddToCartbtn_Click"> 
         <HeaderTemplate></HeaderTemplate>
         <ItemTemplate>
             <div style="display: inline-block">
-                <asp:ImageButton runat="server" Width="200px" CssClass="img-responsive" OnClick="Image_Click" ID="bookImage"
+                <asp:ImageButton runat="server" Width="200px" CssClass="img-responsive" ID="bookImage"
                     PostBackUrl='<%# "~/BookDetails.aspx?ISBN=" +Eval("ISBN") %>'
                        ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:ImageButton>
             <br/>
