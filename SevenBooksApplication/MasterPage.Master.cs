@@ -59,14 +59,14 @@ namespace SevenBooksApplication
             if (isAdmin)
             {
                 btnManageBook.Visible = true;
-                btnManageCustomer.Visible = true;
+                btnManageOrder.Visible = true;
                 btnManageDiscount.Visible = true;
             }
             else
             {
-                btnManageBook.Visible = false;
-                btnManageCustomer.Visible = false;
-                btnManageDiscount.Visible = false;
+                //btnManageBook.Visible = false;
+                //btnManageOrder.Visible = false;
+                //btnManageDiscount.Visible = false;
             }
         }
 
@@ -105,12 +105,12 @@ namespace SevenBooksApplication
 
         protected void btnManageBook_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Admin/AddNewBook.aspx");
         }
 
-        protected void btnManageCustomer_Click(object sender, EventArgs e)
+        protected void btnManageOrder_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Admin/ViewAllOrder.aspx");
         }
 
         protected void btnManageDiscount_Click(object sender, EventArgs e)
