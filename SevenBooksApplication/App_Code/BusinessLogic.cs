@@ -174,6 +174,15 @@ namespace SevenBooksApplication.App_Code
             }
         }
 
+        public static DateTime GetCurrentDiscountEndDate()
+        {
+            using (BookContext context = new BookContext())
+            {
+                Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
+                return discount.EndDate;
+            }
+        }
+
         public static List<Order> GetOrderHistory(string userID)
         {
             using (BookContext context = new BookContext())

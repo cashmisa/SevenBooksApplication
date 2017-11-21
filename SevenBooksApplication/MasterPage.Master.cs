@@ -75,7 +75,7 @@ namespace SevenBooksApplication
             Color[] colourarray2 = new Color[] { Color.Black, Color.CornflowerBlue, Color.LightSlateGray, Color.MidnightBlue, Color.CadetBlue };
             Random r = new Random();
 
-            Label1.Text ="Storewide Discount " + String.Format("{0}",BusinessLogic.GetCurrentDiscount()*100) +"% " + " until" + BusinessLogic.;
+            Label1.Text ="Storewide Discount " + String.Format("{0:##}",BusinessLogic.GetCurrentDiscount()*100) +"% " + " until " + (BusinessLogic.GetCurrentDiscountEndDate()).Date.ToString("d");
             Label1.ForeColor = colourarray[r.Next(0, colourarray.Length)];
             Label1.DataBind();
             Label1.BackColor = colourarray2[r.Next(0, colourarray2.Length)];
