@@ -10,43 +10,47 @@ namespace SevenBooksApplication
     {
         string isbn;
         Book b;
+        int qty;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                isbn = Request.QueryString["ISBN"];
+                b = BusinessLogic.SearchBookByISBN(isbn);
+
+                tbAuthor.Text = b.Author;
+                tbTitle.Text = b.Title;
+                tbPrice.Text = Convert.ToString(b.Price);
+                int stock = b.Stock;
+                int[] stockArray = new int[stock];
+                for (int i = 0; i < stock; i++)
+                {
+                    stockArray[i] = i + 1;
+                }
+                ddlQty.DataSource = stockArray;
+                ddlQty.DataBind();
+                Image1.ImageUrl = string.Format("image/{0}.jpg", isbn);
+
+                bool isAdmin = Roles.IsUserInRole("admin");
+                if (isAdmin)
+                {
+                    btDelete.Visible = true;
+                    btUpdate.Visible = true;
+                }
+                else
+                {
+                    btAdd.Visible = true;
+
+                }
+            }
             
-            isbn = Request.QueryString["ISBN"];
-            b = BusinessLogic.SearchBookByISBN(isbn);
-
-            tbAuthor.Text = b.Author;
-            tbTitle.Text = b.Title;
-            tbPrice.Text = Convert.ToString(b.Price);
-            int stock = b.Stock;
-            int[] stockArray = new int[stock];
-            for (int i = 0; i < stock; i++)
-            {
-                stockArray[i] = i + 1;
-            }
-            ddlQty.DataSource = stockArray;
-            ddlQty.DataBind();
-            Image1.ImageUrl = string.Format("image/{0}.jpg", isbn);
-
-            bool isAdmin = Roles.IsUserInRole("admin");
-            if (isAdmin)
-            {
-                btDelete.Visible = true;
-                btUpdate.Visible = true;
-            }
-            else
-            {
-                btAdd.Visible = true;
-
-            }
 
         }
 
         protected void addCart(object sender, EventArgs e)
         {
-            int qty = Convert.ToInt32(ddlQty.SelectedItem.Text);
-            for(int i=0;i<qty;i++)
+            qty = Convert.ToInt32(ddlQty.SelectedValue);
+            for (int i=0;i<qty;i++)
             {
                 ((List<Book>)Session["cartList"]).Add(b);
             }
@@ -78,5 +82,6 @@ namespace SevenBooksApplication
             btUpdate.Visible = false;
         }
 
+        
     }
 }

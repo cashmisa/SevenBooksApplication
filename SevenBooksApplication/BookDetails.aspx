@@ -45,7 +45,6 @@
 
 
                <asp:Button ID="btDelete" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
-
               
                <br />
                <br />
