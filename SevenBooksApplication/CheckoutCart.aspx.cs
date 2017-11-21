@@ -77,6 +77,7 @@ namespace SevenBooksApplication
                 {
                     Label lblDiscount = e.Row.Cells[(int)ColumnIndex.TotalPrice].FindControl("lblDiscount") as Label;
                     string msg = string.Format("(You saved {0:c})", discountAmt);
+                    lblDiscount.Text = msg;
                     lblDiscount.Visible = true;
                     lblDiscount.ForeColor = System.Drawing.Color.Red;
                     lblDiscount.Font.Italic = true;
