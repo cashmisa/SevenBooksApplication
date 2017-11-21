@@ -47,6 +47,7 @@ namespace SevenBooksApplication
         {
             List<Book> cart =(List<Book>)Session["cartList"];
             cart.Add(b);
+
             SetVisible();
            
         }
