@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddNewBook.aspx.cs" Inherits="SevenBooksApplication.Admin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddNewBook.aspx.cs" Inherits="SevenBooksApplication.AddNewBook" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table>
         <tr>
@@ -40,7 +40,7 @@
             </td>
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Label ID="statuslabel" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="StatusLabel" runat="server" Text="Label"></asp:Label>
             </td>
              
         </tr>
@@ -55,10 +55,11 @@
         </tr>
          <tr>
             <td>
-                Qutantity
+                Quantity
             </td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="tbQuantity" runat="server"></asp:TextBox> 
+            </td>
         </tr>
     </table>
 

@@ -10,7 +10,7 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Admin {
+    public partial class AdminDefault {
         
         /// <summary>
         /// GridView1 control.

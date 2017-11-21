@@ -13,15 +13,11 @@ namespace SevenBooksApplication
     public partial class MasterPage : System.Web.UI.MasterPage
 
     {
-        public List<Book> cartList
+        public List<Book> CartList
         {
             get
             {
-                if (Session["carList"] != null)
-                {
-
-                }
-                else
+                if (Session["cartList"] == null)
                 {
                     Session["cartList"] = new List<Book>();
                 }
@@ -36,55 +32,55 @@ namespace SevenBooksApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (cartList.Count == 0)
+            if (CartList.Count == 0)
             {
                 btnCart.Text = "View Cart";
             }
             else
             {
-                btnCart.Text = string.Format("View Cart ({0})", cartList.Count);
+                btnCart.Text = string.Format("View Cart ({0})", CartList.Count);
             }
 
-            
+
             string userName = "";
+            bool isAdmin = false;
 
-
-
-    //        if (System.Web.HttpContext.Current != null &&
-    //System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
-    //        {
-    //            System.Web.Security.MembershipUser usr = Membership.GetUser();
-    //            if (usr != null)
-    //            {
-    //                userName = HttpContext.Current.User.Identity.Name;
-    //            }
-    //        }
-
-            //if (Roles.FindUsersInRole("admin", userName).Length == 0)
-            //{
-            //    btnManageBook.Visible = false;
-            //    btnManageCustomer.Visible = false;
-            //}
-            //else
-            //{
-            //    btnManageBook.Visible = true;
-            //    btnManageCustomer.Visible = true;
-            //}
+            if (System.Web.HttpContext.Current != null)
+            {
+                userName = HttpContext.Current.User.Identity.Name;
+                isAdmin = Roles.IsUserInRole("admin");
+            }
 
             if (userName == "")
             {
                 btnWelcome.Text = "Welcome, Guest";
-            }else
+            }
+            else
             {
                 btnWelcome.Text = string.Format("Welcome, {0}", userName);
+            }
+
+            if (isAdmin)
+            {
+                btnManageBook.Visible = true;
+                btnManageCustomer.Visible = true;
+                btnManageDiscount.Visible = true;
+            }
+            else
+            {
+                btnManageBook.Visible = false;
+                btnManageCustomer.Visible = false;
+                btnManageDiscount.Visible = false;
             }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            if (tbSearch.Text != string.Empty) {
+            if (tbSearch.Text != string.Empty)
+            {
                 Response.Redirect("~/SearchResults.aspx?SearchBy=" + ddlSearch.Text + "&Term=" + tbSearch.Text);
-            }else
+            }
+            else
             {
                 Response.Redirect("~/Default.aspx");
             }
@@ -109,6 +105,26 @@ namespace SevenBooksApplication
         protected void btnTechnical_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/SearchResults.aspx?SearchBy=" + "Category" + "&Term=" + btnTechnical.Text);
+        }
+
+        protected void btnManageBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnManageCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnManageDiscount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/SetDiscount.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
