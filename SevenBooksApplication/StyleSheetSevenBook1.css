@@ -27,7 +27,7 @@ img {
 }
 
 table {
-    padding: 5px;
+    padding: 2px;
     margin: 10px 15px;
     height: 120px;
     background-color: #fff;
@@ -41,6 +41,7 @@ table {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 
 }
+
 
 
 .lb-book-list {
@@ -113,6 +114,7 @@ table {
 }
 
 .btn-primary {
+    margin: auto;
     display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -138,7 +140,22 @@ table {
     border-radius: 0;
     outline: 1px dotted;
     outline: 5px auto #78C2AD;
+    
+}
 
+.title {
+    font-size: 0.95em;
+    font-weight: bold
+}
+.author {
+    font-size: 0.8em;
+}
+.price {
+    font-size: 0.95em;
+    font-style: italic
+}
+.add-to-cart {
+    padding: 10px;
 }
 
 .btn-primary:hover {
