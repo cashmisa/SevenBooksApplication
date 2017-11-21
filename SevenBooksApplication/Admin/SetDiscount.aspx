@@ -1,37 +1,58 @@
 ﻿<%@ Page Title="Set discount" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="SetDiscount.aspx.cs" Inherits="SevenBooksApplication.SetDiscount" %>
 
 <asp:Content ID="Head1" ContentPlaceHolderID="HeadContent" runat="server">
-    <!-- Include Required Prerequisites -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
 
-    <!-- Include Date Range Picker -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
         $(function () {
-            $('#MainContent_tbPeriod').daterangepicker({
-                "locale": {
-                    "format": "DD/MM/YYYY",
-                },
-                "startDate": "21/11/2017",
-                "endDate": "28/11/2017",
-                "minDate": "21/11/2017"
-            }, function (start, end, label) {
-                console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
-            });
+            var dateFormat = "dd/mm/yyyy",
+                from = $("#MainContent_DateFrom")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        changeMonth: true,
+                        numberOfMonths: 2
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                    }),
+                to = $("#MainContent_DateTo").datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 2
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                    });
+
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+
+                return date;
+            }
         });
     </script>
-    <h4>Discount period:</h4>
-    <asp:TextBox ID="tbPeriod" runat="server" Width="150px" />
+    <label for="from">From</label>
+    <asp:TextBox ID="DateFrom" runat="server"></asp:TextBox>
+    <label for="to">to</label>
+    <asp:TextBox ID="DateTo" runat="server"></asp:TextBox>
+
     <h4>Discount percent:</h4>
     <asp:TextBox ID="tbDiscount" runat="server" Width="32px" />
+    %
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Wrong number format" ValidationExpression="[1-9]{0,1}[0-9]" ControlToValidate="tbDiscount"></asp:RegularExpressionValidator>
     <br />
-    <asp:Button ID="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
+    <br />
+    <asp:Button ID="btnConfirm" class="btn-primary" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
 </asp:Content>
 
