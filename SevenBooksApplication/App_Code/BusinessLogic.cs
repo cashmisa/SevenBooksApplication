@@ -61,14 +61,14 @@ namespace SevenBooksApplication.App_Code
         {
             using (BookContext context = new BookContext())
             {
-                return context.Books.Where(x => x.Title == Title).ToList<Book>();
+                return context.Books.Where(x => x.Title.ToLower().Contains (Title.ToLower().Trim())).ToList<Book>();
             }
         }
         public static Book SearchBookByISBN(string ISBN)
         {
             using (BookContext context = new BookContext())
             {
-                return context.Books.Where(x => x.ISBN == ISBN).ToList<Book>().FirstOrDefault();
+                return context.Books.Where(x => x.ISBN.Contains (ISBN.Trim())).ToList<Book>().FirstOrDefault();
             }
         }
 
