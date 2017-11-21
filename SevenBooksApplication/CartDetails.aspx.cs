@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.App_Code;
+using System.Web.Security;
 
 namespace SevenBooksApplication
 {
@@ -27,15 +28,15 @@ namespace SevenBooksApplication
 
                 decimal discount = BusinessLogic.GetCurrentDiscount();
 
-                Label1.Text = String.Format("${0,00}", subtotal);
+                Label1.Text = String.Format("S${0:0.00}", subtotal);
                 Label2.Text = (discount * 100).ToString() + "%";
-                Label3.Text = String.Format("${0,00}", GrandTotal(subtotal, discount));
+                Label3.Text = String.Format("S${0:0.00}", GrandTotal(subtotal, discount));
                 Decimal SubTotal = Convert.ToDecimal(subtotal);
             }
         }
         public static Decimal GrandTotal(double subtotal, decimal discount)
         {
-            decimal grandTotal = (decimal)subtotal * discount;
+            decimal grandTotal = (decimal)subtotal * (1 - discount);
             return grandTotal;
 
 
@@ -44,6 +45,11 @@ namespace SevenBooksApplication
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/User/CheckoutCart.aspx");
         }
     }
 }

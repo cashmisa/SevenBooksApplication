@@ -3,32 +3,60 @@ using SevenBooksApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Security;
+using System.Linq;
 
 namespace SevenBooksApplication
 {
     public partial class BookDetails : System.Web.UI.Page
     {
-        string isbn;
-        Book b;
-        int qty;
+        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.QueryString["ISBN"] == null)
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+
             if (!IsPostBack)
             {
+                string isbn;
+                Book b;
+
                 isbn = Request.QueryString["ISBN"];
                 b = BusinessLogic.SearchBookByISBN(isbn);
 
                 tbAuthor.Text = b.Author;
                 tbTitle.Text = b.Title;
+                Title = b.Title + "- SevenBooks";
                 tbPrice.Text = Convert.ToString(b.Price);
-                int stock = b.Stock;
-                int[] stockArray = new int[stock];
-                for (int i = 0; i < stock; i++)
+
+                int currentCountInCart = 0;
+                List<Book> books = (List<Book>)Session["cartList"];
+                if(books != null && books.Where(x => x.ISBN == Request.QueryString["ISBN"]).Count() > 0)
                 {
-                    stockArray[i] = i + 1;
+                    Book book = books.Where(x => x.ISBN == Request.QueryString["ISBN"]).First();
+                    currentCountInCart = books.Where(x => x.ISBN == Request.QueryString["ISBN"].ToString()).ToList().Count;
                 }
-                ddlQty.DataSource = stockArray;
-                ddlQty.DataBind();
+
+                int stock = b.Stock - currentCountInCart;
+
+                if(stock > 0)
+                {
+                    int[] stockArray = new int[stock];
+                    for (int i = 0; i < stock; i++)
+                    {
+                        stockArray[i] = i + 1;
+                    }
+                    ddlQty.DataSource = stockArray;
+                    ddlQty.DataBind();
+                }
+                else
+                {
+                    btAdd.Enabled = false;
+                    btAdd.Text = "Out of stock.";
+                }
+                
                 Image1.ImageUrl = string.Format("image/{0}.jpg", isbn);
 
                 bool isAdmin = Roles.IsUserInRole("admin");
@@ -43,27 +71,30 @@ namespace SevenBooksApplication
 
                 }
             }
-            
+
 
         }
 
         protected void addCart(object sender, EventArgs e)
         {
-            qty = Convert.ToInt32(ddlQty.SelectedValue);
-            for (int i=0;i<qty;i++)
+            Book b = BusinessLogic.SearchBookByISBN(Request.QueryString["ISBN"]);
+            tbTitle.Text = b.ISBN;
+
+            int qty = Convert.ToInt32(ddlQty.SelectedValue);
+            for (int i = 0; i < qty; i++)
             {
                 ((List<Book>)Session["cartList"]).Add(b);
             }
-           
+            
             Response.Redirect(Request.RawUrl);
             SetVisible();
         }
-        
+
 
         protected void update_button(object sender, EventArgs e)
         {
             SetVisible();
-            Response.Redirect("UpdateBook.aspx?ISBN=" + isbn);
+            Response.Redirect("UpdateBook.aspx?ISBN=" + Request.QueryString["ISBN"]);
         }
 
         protected void delete_book(object sender, EventArgs e)
@@ -82,6 +113,6 @@ namespace SevenBooksApplication
             btUpdate.Visible = false;
         }
 
-        
+
     }
 }

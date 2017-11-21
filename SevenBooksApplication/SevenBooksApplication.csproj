@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -59,6 +59,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -190,11 +191,11 @@
     <Content Include="Image\9781619634480.jpg" />
     <Content Include="Image\9781911015222.jpg" />
     <Content Include="Image\StoreLogo.jpg" />
-    <Content Include="MyAccount.aspx" />
+    <Content Include="User\MyAccount.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="BookDetails.aspx" />
     <Content Include="CartDetails.aspx" />
-    <Content Include="CheckoutCart.aspx" />
+    <Content Include="User\CheckoutCart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -282,11 +283,11 @@
     <Compile Include="Error_pages\DefaultError.aspx.designer.cs">
       <DependentUpon>DefaultError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyAccount.aspx.cs">
+    <Compile Include="User\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyAccount.aspx.designer.cs">
+    <Compile Include="User\MyAccount.aspx.designer.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -368,11 +369,11 @@
     <Compile Include="CartDetails.aspx.designer.cs">
       <DependentUpon>CartDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CheckoutCart.aspx.cs">
+    <Compile Include="User\CheckoutCart.aspx.cs">
       <DependentUpon>CheckoutCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CheckoutCart.aspx.designer.cs">
+    <Compile Include="User\CheckoutCart.aspx.designer.cs">
       <DependentUpon>CheckoutCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
