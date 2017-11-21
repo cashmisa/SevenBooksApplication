@@ -70,6 +70,14 @@ namespace SevenBooksApplication.App_Code
                 return context.Books.Where(x => x.ISBN == ISBN).ToList<Book>().FirstOrDefault();
             }
         }
+
+        public static List<Book> SearchBookByISBNList(string ISBNa)
+        {
+            List<Book> Booker = new List<Book>();
+            Booker.Add(SearchBookByISBN(ISBNa));
+            return Booker;
+        }
+
         public static Book SearchBookByBookId(int bookID)
         {
             using (BookContext context = new BookContext())

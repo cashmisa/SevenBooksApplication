@@ -121,5 +121,10 @@ namespace SevenBooksApplication
         {
             Response.Redirect("~/Admin/SetDiscount.aspx");
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }
