@@ -180,6 +180,7 @@ namespace SevenBooksApplication.App_Code
             {
                 List<Order> orderHistory = (from x in context.Orders
                                             where x.UserID == userID
+                                            orderby x.DatePurchase descending
                                             select x).ToList();
                 return orderHistory;
             }

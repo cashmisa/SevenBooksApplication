@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="BookDetails.aspx.cs" Inherits="SevenBooksApplication.BookDetails" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server"></style>
     <table>
        <tr>
-           <td style="width: 556px">
-               <asp:Image ID="Image1" runat="server" Height="300px" Width="300px" />
+            <td style="border-style: none; border-color: inherit; border-width: medium; padding: 0px 20px; margin: auto; text-align: right; vertical-align: top;" class="auto-style3">
+               <asp:Image ID="Image1" runat="server" Height="308px" Width="289px" />
            </td>
            
-           <td>
+           <td style="width: 556px; padding: 5px 20px; margin: auto; border: none; text-align: left">
                
                <asp:Label ID="tbTitle" runat="server" Text="Title" Font-Size="Large" Font-Bold="True"></asp:Label>
                <br />
@@ -44,8 +44,7 @@
                <br />
 
 
-               <asp:Button ID="btDelete" class="btn-primary" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
-
+               <asp:Button ID="btDelete" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
               
                <br />
                <br />
@@ -54,3 +53,11 @@
    </table>
     
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="HeadContent">
+    <style type="text/css">
+        .auto-style3 {
+            width: 473px;
+        }
+    </style>
+</asp:Content>
+

@@ -27,7 +27,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <table class="auto-style1" border="0">
+                    <table class="auto-style1" border="0" style="border-style:hidden">
                         <tr>
                             <td class="bgColour" colspan="2">
                                 <asp:Panel class="bgColourInLineBlockLeft" ID="Panel4" runat="server" Style="text-align: right">
@@ -75,9 +75,9 @@
                                 </asp:Panel>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="border: none">
 
-                            <td colspan="2">
+                            <td colspan="2" style="border: none">
                                 <br />
                                 
                                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
