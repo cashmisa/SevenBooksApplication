@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Login/ Register" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SevenBooksApplication.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <table style="margin:auto">
+        <table style="margin:auto" border="0">
             <tr>
                 <td class="auto-style3">
                     <asp:Login ID="Login1" runat="server" Height="300px" OnLoggedIn="Login1_LoggedIn" BorderStyle="None" Width="407px">
