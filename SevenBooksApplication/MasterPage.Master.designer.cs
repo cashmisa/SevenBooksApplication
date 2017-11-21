@@ -85,6 +85,15 @@ namespace SevenBooksApplication {
         protected global::System.Web.UI.WebControls.Button btnCart;
         
         /// <summary>
+        /// LoginStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus;
+        
+        /// <summary>
         /// btnManageBook control.
         /// </summary>
         /// <remarks>
@@ -110,15 +119,6 @@ namespace SevenBooksApplication {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnManageDiscount;
-        
-        /// <summary>
-        /// LoginStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus;
         
         /// <summary>
         /// Panel2 control.
