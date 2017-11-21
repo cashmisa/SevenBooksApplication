@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.App_Code;
 using SevenBooksApplication.Models;
+using System.Web.Security;
 
 namespace SevenBooksApplication
 {
@@ -25,6 +26,11 @@ namespace SevenBooksApplication
                 }
                 else
                 {
+                    MembershipUser currentUser = Membership.GetUser();
+                    Guid currentUserId = (Guid)currentUser.ProviderUserKey;
+                    string userID = currentUserId.ToString();
+                    BusinessLogic.CreateOrder(Session["cartList"] as List<Book>, userID);
+
                     MultiView1.ActiveViewIndex = 1;
 
                     Dictionary<string, int> bookCounts = bookList.GroupBy(x => x.ISBN)
@@ -64,19 +70,19 @@ namespace SevenBooksApplication
                 lblQty.Text = data.Quantity.ToString();
 
                 Label lblPrice = e.Row.Cells[(int)ColumnIndex.Price].FindControl("lblPrice") as Label;
-                lblPrice.Text = string.Format("{0:c}", book.Price);
+                lblPrice.Text = string.Format("S${0:0.00}", book.Price);
 
                 Label lblTotalPrice = e.Row.Cells[(int)ColumnIndex.TotalPrice].FindControl("lblTotalPrice") as Label;                
                 decimal currentDiscount = BusinessLogic.GetCurrentDiscount();
                 decimal totalPrice = book.Price * data.Quantity * (1 - currentDiscount);
-                lblTotalPrice.Text = string.Format("{0:c}", totalPrice);
+                lblTotalPrice.Text = string.Format("S${0:0.00}", totalPrice);
 
                 decimal discountAmt = book.Price * data.Quantity * currentDiscount;
 
                 if (currentDiscount != 0)
                 {
                     Label lblDiscount = e.Row.Cells[(int)ColumnIndex.TotalPrice].FindControl("lblDiscount") as Label;
-                    string msg = string.Format("(You saved {0:c})", discountAmt);
+                    string msg = string.Format("(You saved S${0:0.00})", discountAmt);
                     lblDiscount.Text = msg;
                     lblDiscount.Visible = true;
                     lblDiscount.ForeColor = System.Drawing.Color.Red;

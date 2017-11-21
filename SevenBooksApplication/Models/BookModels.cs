@@ -83,15 +83,13 @@ namespace SevenBooksApplication.Models
         public int BookID { get; set; }
 
         [Required]
-        [StringLength(16)]
         public string UserID { get; set; }
 
         public DateTime DatePurchase { get; set; }
 
-        [Column(TypeName = "money")]
         public decimal Price { get; set; }
 
-        public int Discount { get; set; }
+        public decimal? Discount { get; set; }
 
         [StringLength(15)]
         public string OrderStatus { get; set; }
@@ -150,16 +148,20 @@ namespace SevenBooksApplication.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Order>()
-                .Property(e => e.UserID)
-                .IsUnicode(false);
+                .Property(e => e.Price)
+                .HasPrecision(20, 4);
 
             modelBuilder.Entity<Order>()
-                .Property(e => e.Price)
-                .HasPrecision(19, 4);
+                .Property(e => e.Discount)
+                .HasPrecision(3, 2);
 
             modelBuilder.Entity<Order>()
                 .Property(e => e.OrderStatus)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Discount>()
+                .Property(e => e.PercentDiscount)
+                .HasPrecision(3, 2);
 
             modelBuilder.Entity<Discount>()
                 .Property(e => e.PercentDiscount)

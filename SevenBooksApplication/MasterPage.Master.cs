@@ -65,9 +65,9 @@ namespace SevenBooksApplication
             }
             else
             {
-                //btnManageBook.Visible = false;
-                //btnManageOrder.Visible = false;
-                //btnManageDiscount.Visible = false;
+                btnManageBook.Visible = false;
+                btnManageOrder.Visible = false;
+                btnManageDiscount.Visible = false;
             }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
             Color[] colourarray = new Color[] { Color.Cyan, Color.LightGoldenrodYellow, Color.WhiteSmoke, Color.Chartreuse, Color.Ivory};

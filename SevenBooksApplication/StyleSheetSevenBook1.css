@@ -43,7 +43,6 @@ table {
 }
 
 
-
 .lb-book-list {
     display:block;
     float:left;
@@ -113,6 +112,21 @@ table {
   text-decoration: none;
 }
 
+.search-select {
+    min-width: 8rem;
+    padding: 0.5rem 0.5rem;
+    margin: 0.125rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    color: #888;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+
 .btn-primary {
     margin: auto;
     display: inline-block;
@@ -152,7 +166,8 @@ table {
 }
 .price {
     font-size: 0.95em;
-    font-style: italic
+    font-style: italic;
+
 }
 .add-to-cart {
     padding: 10px;

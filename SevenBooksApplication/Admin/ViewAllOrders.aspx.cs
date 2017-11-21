@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.App_Code;
+using SevenBooksApplication.Models;
 
 namespace SevenBooksApplication
 {
@@ -41,5 +42,23 @@ namespace SevenBooksApplication
             GridView1.EditIndex = -1;
             BindGrid();
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+             if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            Order order = (Order) e.Row.DataItem;
+            int id = order.BookID;
+            string title= BusinessLogic.GetBookTitle(id);
+ 
+            Label lbTitle = (e.Row.FindControl("lbTitle") as Label);
+            if (lbTitle != null)
+                    lbTitle.Text = title;
+ 
+          
+ 
+           
+        }
     }
-}
+   }
+ }

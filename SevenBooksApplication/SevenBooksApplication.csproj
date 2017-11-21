@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -59,6 +59,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -190,11 +191,11 @@
     <Content Include="Image\9781619634480.jpg" />
     <Content Include="Image\9781911015222.jpg" />
     <Content Include="Image\StoreLogo.jpg" />
-    <Content Include="MyAccount.aspx" />
+    <Content Include="User\MyAccount.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="BookDetails.aspx" />
     <Content Include="CartDetails.aspx" />
-    <Content Include="CheckoutCart.aspx" />
+    <Content Include="User\CheckoutCart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -212,8 +213,6 @@
     <Content Include="App_Data\Bookshop.bak" />
     <Content Include="Login.aspx" />
     <Content Include="MasterPage.Master" />
-    <Content Include="PasswordRecovery.aspx" />
-    <Content Include="CreateUser.aspx" />
     <Content Include="SearchResults.aspx" />
     <Content Include="Admin\SetDiscount.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
@@ -251,7 +250,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="doNotUseOrDelete.Master" />
     <Content Include="Admin\ViewAllOrders.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -282,11 +280,11 @@
     <Compile Include="Error_pages\DefaultError.aspx.designer.cs">
       <DependentUpon>DefaultError.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MyAccount.aspx.cs">
+    <Compile Include="User\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MyAccount.aspx.designer.cs">
+    <Compile Include="User\MyAccount.aspx.designer.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -302,20 +300,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="PasswordRecovery.aspx.cs">
-      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PasswordRecovery.aspx.designer.cs">
-      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUser.aspx.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUser.aspx.designer.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchResults.aspx.cs">
       <DependentUpon>SearchResults.aspx</DependentUpon>
@@ -368,11 +352,11 @@
     <Compile Include="CartDetails.aspx.designer.cs">
       <DependentUpon>CartDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CheckoutCart.aspx.cs">
+    <Compile Include="User\CheckoutCart.aspx.cs">
       <DependentUpon>CheckoutCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CheckoutCart.aspx.designer.cs">
+    <Compile Include="User\CheckoutCart.aspx.designer.cs">
       <DependentUpon>CheckoutCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
@@ -401,13 +385,6 @@
       <DependentUpon>OrderSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="doNotUseOrDelete.Master.cs">
-      <DependentUpon>doNotUseOrDelete.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="doNotUseOrDelete.Master.designer.cs">
-      <DependentUpon>doNotUseOrDelete.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ViewAllOrders.aspx.cs">
       <DependentUpon>ViewAllOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

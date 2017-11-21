@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Linq;
 
 
 namespace SevenBooksApplication
@@ -14,7 +15,6 @@ namespace SevenBooksApplication
         {
             if (!IsPostBack)
             {
-
                 repBookList.DataSource = BusinessLogic.SearchAllBooks();
                 repBookList.DataBind();
             }
@@ -26,8 +26,25 @@ namespace SevenBooksApplication
         {
             if (e.CommandName == "AddToCart")
             {
-                ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
-                Response.Redirect(Request.RawUrl);
+                int currentCountInCart = 0;
+                List<Book> books = (List<Book>)Session["cartList"];
+                if(books != null && books.Where(x => x.ISBN == e.CommandArgument.ToString()).ToList().Count > 0)
+                {
+                    Book book = books.Where(x => x.ISBN == e.CommandArgument.ToString()).First();
+                    currentCountInCart = books.Where(x => x.ISBN == e.CommandArgument.ToString()).ToList().Count;
+
+                    if (book.Stock - currentCountInCart > 0)
+                    {
+                        ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
+                        Response.Redirect(Request.RawUrl);
+                    }
+                    else
+                    {
+                        string msg = string.Format("<script>alert('Out of stock.');</script>");
+                        Response.Write(msg);
+                    }
+                }
+                
             }
         }
     }
