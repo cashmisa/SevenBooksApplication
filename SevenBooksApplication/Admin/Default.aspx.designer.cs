@@ -10,6 +10,6 @@
 namespace SevenBooksApplication {
     
     
-    public partial class Admin {
+    public partial class AdminDefault {
     }
 }
