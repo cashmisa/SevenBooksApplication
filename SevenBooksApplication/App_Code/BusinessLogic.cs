@@ -235,5 +235,14 @@ namespace SevenBooksApplication.App_Code
                 return orderHistory;
             }
         }
+        public static String GetBookTitle(int bookID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                return context.Books.Where(x => x.BookID ==bookID).FirstOrDefault().Title;
+            }
+        }
+
+
     }
 }

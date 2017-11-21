@@ -13,23 +13,25 @@ namespace SevenBooksApplication
 
         protected void Add_onClick(object sender, EventArgs e)
         {
-            //if (FileUpload1.HasFile)
-            //{
-            //    try
-            //    {
-            //        string filename = FileUpload1.FileName;
-            //        FileUpload1.SaveAs(Server.MapPath("~/files/") + filename);
-            //        StatusLabel.Text = "Upload status: File uploaded!";
-            //        StatusLabel.Visible = true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        StatusLabel.Text =
-            //        "Upload status: The file could not be uploaded." +
-            //        "The following error occurred: " + ex.Message;
-            //        StatusLabel.Visible = true;
-            //    }
-            //}
+            if (FileUpload1.HasFile)
+            {
+                try
+                {
+                    string filename = FileUpload1.FileName;
+                 
+
+                   FileUpload1.SaveAs(Server.MapPath(@"~/Image/") + filename);
+                    StatusLabel.Text = "Upload status: File uploaded!";
+                    StatusLabel.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    StatusLabel.Text =
+                    "Upload status: The file could not be uploaded." +
+                    "The following error occurred: " + ex.Message;
+                    StatusLabel.Visible = true;
+                }
+            }
 
             string title = tbTitle.Text;
             string author = tbAuthor.Text;
