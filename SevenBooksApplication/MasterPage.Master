@@ -38,8 +38,8 @@
 
                                 <asp:Panel class="bgColourInLineBlock" ID="Panel1" runat="server" Style="text-align: right">
 
-                                    <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" />
-                                    <asp:Button class="btnHead" ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" />
+                                    <asp:Button class="btnHead" ID="btnWelcome" runat="server" Text="Welcome, Guest" BorderStyle="None" OnClick="btnWelcome_Click" />
+                                    <asp:Button class="btnHead" ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" OnClick="btnCart_Click" />
                                     <asp:LoginStatus class="btnHead" ID="LoginStatus" runat="server" LoginText="Login / Register" />
                                 </asp:Panel>
 
