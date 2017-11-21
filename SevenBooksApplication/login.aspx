@@ -3,12 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <table style="margin:auto">
             <tr>
-                <td>
-                    <asp:Login ID="Login1" runat="server" Height="207px" OnLoggedIn="Login1_LoggedIn">
+                <td class="auto-style3">
+                    <asp:Login ID="Login1" runat="server" Height="300px" OnLoggedIn="Login1_LoggedIn" BorderStyle="None" Width="407px">
+                        <LoginButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                     </asp:Login>
                 </td>
                 <td>
-                    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick" OnCreatedUser="CreateUserWizard1_CreatedUser">
+                    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick" OnCreatedUser="CreateUserWizard1_CreatedUser" BorderStyle="None" Height="100px" Width="653px">
+                        <CreateUserButtonStyle BorderStyle="None" CssClass="btn-primary" Font-Bold="True" />
                         <WizardSteps>
                             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                             </asp:CreateUserWizardStep>
@@ -20,3 +22,11 @@
             </tr>
         </table>
 </asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="HeadContent">
+    <style type="text/css">
+        .auto-style3 {
+            width: 485px;
+        }
+    </style>
+</asp:Content>
+
