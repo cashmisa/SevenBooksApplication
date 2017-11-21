@@ -54,7 +54,7 @@ namespace SevenBooksApplication
         protected void update_button(object sender, EventArgs e)
         {
             SetVisible();
-            Response.Redirect("UpdateBook.aspx?ISBN=" + ISBN);
+            Response.Redirect("UpdateBook.aspx?ISBN=" + isbn);
         }
 
         protected void delete_book(object sender, EventArgs e)
