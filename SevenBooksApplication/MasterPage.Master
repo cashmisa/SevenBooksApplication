@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title><%: Page.Title %> - SevenBooks</title>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -19,7 +19,8 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="StyleSheetSevenBook1.css" />
-    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -30,7 +31,7 @@
                         <tr>
                             <td class="bgColour" colspan="2">
                                 <asp:Panel class="bgColourInLineBlockLeft" ID="Panel4" runat="server" Style="text-align: right">
-                                    <asp:Button class="btnHead" ID="btnHome" runat="server" Text="Home" BorderStyle="None" />
+                                    <asp:Button class="btnHead" ID="btnHome" runat="server" Text="Home" BorderStyle="None" OnClick="btnHome_Click" />
                                     <asp:HiddenField ID="hdfUserID" runat="server" />
                                 </asp:Panel>
 
@@ -50,6 +51,7 @@
                             <td colspan="2">
                                 <asp:Button class="btnHead" ID="btnManageBook" runat="server" Text="Manage Book" BorderStyle="None" OnClick="btnManageBook_Click" />
                                 <asp:Button class="btnHead" ID="btnManageCustomer" runat="server" Text="Manage Customer" BorderStyle="None" OnClick="btnManageCustomer_Click" />
+                                <asp:Button class="btnHead" ID="btnManageDiscount" runat="server" Text="Manage Discount" BorderStyle="None" OnClick="btnManageDiscount_Click" />
                                 <br />
                                 <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
                                     <asp:DropDownList ID="ddlSearch" runat="server">

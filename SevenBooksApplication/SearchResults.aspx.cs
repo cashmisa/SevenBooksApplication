@@ -25,7 +25,7 @@ namespace SevenBooksApplication
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByTitle(searchTerm);
                             break;
                         case "ISBN":
-                            repBookListSearch.DataSource = BusinessLogic.SearchBookByISBN(searchTerm);
+                            repBookListSearch.DataSource = BusinessLogic.SearchBookByISBNList(searchTerm);
                             break;
                         case "Category":
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByCategory(searchTerm);

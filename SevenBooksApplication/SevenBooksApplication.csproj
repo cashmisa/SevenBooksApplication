@@ -139,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="AddNewBook.aspx" />
+    <Content Include="Admin\AddNewBook.aspx" />
     <Content Include="Content\bootstrap-minty.css" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
@@ -190,7 +190,7 @@
     <Content Include="Image\9781911015222.jpg" />
     <Content Include="Image\StoreLogo.jpg" />
     <Content Include="MyAccount.aspx" />
-    <Content Include="Admin.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="BookDetails.aspx" />
     <Content Include="CartDetails.aspx" />
     <Content Include="CheckoutCart.aspx" />
@@ -214,8 +214,9 @@
     <Content Include="PasswordRecovery.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="SearchResults.aspx" />
+    <Content Include="Admin\SetDiscount.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
-    <Content Include="UpdateBook.aspx" />
+    <Content Include="Admin\UpdateBook.aspx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -257,11 +258,11 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNewBook.aspx.cs">
+    <Compile Include="Admin\AddNewBook.aspx.cs">
       <DependentUpon>AddNewBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddNewBook.aspx.designer.cs">
+    <Compile Include="Admin\AddNewBook.aspx.designer.cs">
       <DependentUpon>AddNewBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\BusinessLogic.cs" />
@@ -307,19 +308,26 @@
     <Compile Include="SearchResults.aspx.designer.cs">
       <DependentUpon>SearchResults.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateBook.aspx.cs">
+    <Compile Include="Admin\SetDiscount.aspx.cs">
+      <DependentUpon>SetDiscount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetDiscount.aspx.designer.cs">
+      <DependentUpon>SetDiscount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateBook.aspx.cs">
       <DependentUpon>UpdateBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateBook.aspx.designer.cs">
+    <Compile Include="Admin\UpdateBook.aspx.designer.cs">
       <DependentUpon>UpdateBook.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

@@ -37,14 +37,14 @@ namespace SevenBooksApplication
             bool isAdmin = Roles.IsUserInRole("admin");
             if(isAdmin)
             {
-                Response.Redirect("~/Admin.aspx");
+                Response.Redirect("~/Admin/Default.aspx");
             }
             else
             {
                 if (Request.QueryString["ReturnUrl"] != null)
                 {
                     string returnUrl = Request.QueryString["ReturnUrl"];
-                    Response.Redirect("~" + returnUrl);
+                    Response.Redirect(returnUrl);
                 }
                 Response.Redirect("~/Default.aspx");
             }

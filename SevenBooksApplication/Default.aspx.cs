@@ -23,8 +23,16 @@ namespace SevenBooksApplication
         {
             //string url = ((ImageButton)sender).AlternateText;
             //Response.Redirect("BookDetails.aspx?ISBN=" + url);
+            
+            //RepeaterItem repeater = sender as RepeaterItem;
+            //ImageButton imgbtn = (ImageButton) repeater.FindControl("bookImage");
 
-            //Response.Redirect("http://www.google.com");
+
+            //// ImageButton imgbtn = (ImageButton)repBookList.Items[0].FindControl("bookImage");
+            //Response.Redirect("BookDetails.aspx?ISBN=" + imgbtn.AlternateText);
+
+
+            ////Response.Redirect("http://www.google.com");
         }
     }
 }
