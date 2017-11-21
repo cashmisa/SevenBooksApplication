@@ -31,7 +31,7 @@ namespace SevenBooksApplication
         {
             //Exception ex = Server.GetLastError();
             //Server.ClearError();
-            //Response.Redirect("~/ErrorPage.aspx");
+            //Server.Transfer("~/Error_Page/DefaultError.aspx", false);
 
         }
 
