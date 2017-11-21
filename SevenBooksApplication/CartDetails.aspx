@@ -88,6 +88,6 @@
                        </asp:AsyncPostBackTrigger>
                    </Triggers>
                </asp:UpdatePanel>
-               <asp:Button ID="Button4" runat="server" Text="PROCEED TO CHECKOUT" Width="300px" />
+               <asp:Button ID="Button4" runat="server" Text="CHECKOUT" Width="300px" />
                <br />
 </asp:Content>
