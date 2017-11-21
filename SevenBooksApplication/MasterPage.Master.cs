@@ -69,8 +69,7 @@ namespace SevenBooksApplication
                 //btnManageOrder.Visible = false;
                 //btnManageDiscount.Visible = false;
             }
-
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
             Color[] colourarray = new Color[] { Color.Cyan, Color.LightGoldenrodYellow, Color.WhiteSmoke, Color.Chartreuse, Color.Ivory};
             Color[] colourarray2 = new Color[] { Color.Black, Color.CornflowerBlue, Color.LightSlateGray, Color.MidnightBlue, Color.CadetBlue };
             Random r = new Random();
