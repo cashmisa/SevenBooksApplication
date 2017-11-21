@@ -227,6 +227,8 @@ table {
     background-color: #fff;
     border-color: #d0eae2;
     outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
 
@@ -236,3 +238,4 @@ table {
 .auto-style1 {
     margin: 0px;
 }
+
