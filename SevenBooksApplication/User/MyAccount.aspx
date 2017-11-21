@@ -14,7 +14,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="DatePurchase" DataFormatString="{0: dd/MM/yyyy}" HeaderText="Date Purchase" />
-                    <asp:BoundField DataField="Price" DataFormatString="{0:c}" HeaderText="Purchase Price" />
+                    <asp:BoundField DataField="Price" DataFormatString="S${0:0.00}" HeaderText="Purchase Price" />
                     <asp:BoundField DataField="Quantity" HeaderText="Purchase Quantity" />
                     <asp:BoundField DataField="OrderStatus" HeaderText="Order Status" />
                 </Columns>

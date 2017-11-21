@@ -6,8 +6,7 @@
         <tr>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <td style="width: 174px">
-                <asp:Image ID="Image1" runat="server" Height="113px" Width="179px" Style="margin-top: 45px" ImageUrl="~/Image/9780060555665.jpg" />
-            </td>
+                &nbsp;</td>
             <td style="width: 911px">
 
                 <table class="auto-style1" style="width: 97%">
@@ -71,7 +70,7 @@
                     <Triggers>
                     </Triggers>
                 </asp:UpdatePanel>
-                <asp:Button ID="Button4" runat="server" Text="PROCEED TO CHECKOUT" Width="300px" />
+                <asp:Button ID="Button4" runat="server" Text="PROCEED TO CHECKOUT" Width="300px" OnClick="Button4_Click" />
                 <br />
             </td>
         </tr>
