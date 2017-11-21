@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
+
 namespace SevenBooksApplication.App_Code
 {
     public class BusinessLogic
@@ -26,11 +27,11 @@ namespace SevenBooksApplication.App_Code
 
             }
         }
-        public static void UpdateBook(int BookID, string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
+        public static void UpdateBook(int BookID,string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
         {
             using (BookContext context = new BookContext())
             {
-                Book book = context.Books.Where(x => x.BookID == BookID).First();
+                Book book = context.Books.Where(x => x.ISBN == ISBN).First();
                 book.Title = Title;
                 book.CategoryID = getCategoryID(CategoryName);
                 book.ISBN = ISBN;
@@ -70,6 +71,14 @@ namespace SevenBooksApplication.App_Code
                 return context.Books.Where(x => x.ISBN == ISBN).ToList<Book>().FirstOrDefault();
             }
         }
+
+        public static List<Book> SearchBookByISBNList(string ISBNa)
+        {
+            List<Book> Booker = new List<Book>();
+            Booker.Add(SearchBookByISBN(ISBNa));
+            return Booker;
+        }
+
         public static Book SearchBookByBookId(int bookID)
         {
             using (BookContext context = new BookContext())
@@ -157,11 +166,22 @@ namespace SevenBooksApplication.App_Code
             using (BookContext context = new BookContext())
             {
                 Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
-                if(discount == null || discount.EndDate > DateTime.Today)
+                if (discount == null || discount.EndDate > DateTime.Today)
                 {
                     return 0;
                 }
                 return discount.PercentDiscount;
+            }
+        }
+
+        public static List<Order> GetOrderHistory(string userID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                List<Order> orderHistory = (from x in context.Orders
+                                            where x.UserID == userID
+                                            select x).ToList();
+                return orderHistory;
             }
         }
     }

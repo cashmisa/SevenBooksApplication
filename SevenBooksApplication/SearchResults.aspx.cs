@@ -1,4 +1,5 @@
 ﻿using SevenBooksApplication.App_Code;
+using SevenBooksApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace SevenBooksApplication
         {
             if (!IsPostBack)
             {
-                if (!(string.IsNullOrEmpty(Request.QueryString["Term"])) && !(string.IsNullOrEmpty(Request.QueryString["Term"]))){
+                if (!(string.IsNullOrEmpty(Request.QueryString["Term"])) && !(string.IsNullOrEmpty(Request.QueryString["Term"])))
+                {
                     string searchTerm = Request.QueryString["Term"];
                     string searchBy = Request.QueryString["SearchBy"];
 
@@ -25,22 +27,32 @@ namespace SevenBooksApplication
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByTitle(searchTerm);
                             break;
                         case "ISBN":
-                            repBookListSearch.DataSource = BusinessLogic.SearchBookByISBN(searchTerm);
+                            repBookListSearch.DataSource = BusinessLogic.SearchBookByISBNList(searchTerm);
                             break;
                         case "Category":
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByCategory(searchTerm);
                             break;
                         default:
                             repBookListSearch.DataSource = BusinessLogic.SearchBookByTitle(searchTerm);
-                            break;                                                  
+                            break;
+                            //default case if person edit the query string in address bad          
                     }
-                }else
+                }
+                else
                 {
                     Server.Transfer("~/Default.aspx");
                 }
                 repBookListSearch.DataBind();
             }
 
+
+        }
+        protected void AddToCartbtn_Click(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "AddToCart")
+            {
+                ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
+            }
         }
     }
 }
