@@ -28,6 +28,7 @@ img {
 
 table {
     padding: 2px;
+    margin: 10px 15px;
     height: 120px;
     background-color: #fff;
     border-collapse: collapse !important;
@@ -38,6 +39,7 @@ table {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
+
 }
 
 
@@ -137,7 +139,7 @@ table {
     border-color: #78C2AD;
     border-radius: 0;
     outline: 1px dotted;
-    outline: 1px auto #78C2AD;
+    outline: 5px auto #78C2AD;
     
 }
 
