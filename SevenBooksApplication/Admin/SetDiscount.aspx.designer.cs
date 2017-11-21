@@ -13,13 +13,22 @@ namespace SevenBooksApplication {
     public partial class SetDiscount {
         
         /// <summary>
-        /// tbPeriod control.
+        /// DateFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPeriod;
+        protected global::System.Web.UI.WebControls.TextBox DateFrom;
+        
+        /// <summary>
+        /// DateTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DateTo;
         
         /// <summary>
         /// tbDiscount control.

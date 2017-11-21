@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="SearchResults.aspx.cs" Inherits="SevenBooksApplication.SearchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<asp:Repeater ID="repBookListSearch" runat="server" OnItemCommand="AddToCartbtn_Click">
+    <asp:Repeater ID="repBookListSearch" runat="server" OnItemCommand="AddToCartbtn_Click">
         <HeaderTemplate></HeaderTemplate>
         <ItemTemplate>
             <div style="display: inline-block">

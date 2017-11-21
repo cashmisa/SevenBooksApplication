@@ -44,8 +44,7 @@
                <br />
 
 
-               <asp:Button ID="btDelete" class="btn-primary" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
-
+               <asp:Button ID="btDelete" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
               
                <br />
                <br />

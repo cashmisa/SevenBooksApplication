@@ -166,7 +166,7 @@ namespace SevenBooksApplication.App_Code
             using (BookContext context = new BookContext())
             {
                 Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
-                if (discount == null || discount.EndDate > DateTime.Today)
+                if (discount == null || discount.EndDate < DateTime.Today)
                 {
                     return 0;
                 }
@@ -180,6 +180,7 @@ namespace SevenBooksApplication.App_Code
             {
                 List<Order> orderHistory = (from x in context.Orders
                                             where x.UserID == userID
+                                            orderby x.DatePurchase descending
                                             select x).ToList();
                 return orderHistory;
             }
