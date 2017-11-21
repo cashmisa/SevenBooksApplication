@@ -166,7 +166,7 @@ namespace SevenBooksApplication.App_Code
             using (BookContext context = new BookContext())
             {
                 Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
-                if (discount == null || discount.EndDate > DateTime.Today)
+                if (discount == null || discount.EndDate < DateTime.Today)
                 {
                     return 0;
                 }

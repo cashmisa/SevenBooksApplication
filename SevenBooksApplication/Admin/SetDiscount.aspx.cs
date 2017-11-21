@@ -17,10 +17,11 @@ namespace SevenBooksApplication
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            string[] dates = tbPeriod.Text.Split('-');
+            string from = DateFrom.Text;
+            string to = DateTo.Text;
 
-            DateTime startDate = GetDateFromString(dates[0].Trim());
-            DateTime endDate = GetDateFromString(dates[1].Trim());
+            DateTime startDate = GetDateFromString(from);
+            DateTime endDate = GetDateFromString(to);
 
             decimal percent = Convert.ToDecimal(tbDiscount.Text) / 100;
 
@@ -30,8 +31,8 @@ namespace SevenBooksApplication
         private DateTime GetDateFromString(string date)
         {
             string[] numbers = date.Split('/');
-            int day = Convert.ToInt32(numbers[0]);
-            int month = Convert.ToInt32(numbers[1]);
+            int month = Convert.ToInt32(numbers[0]);
+            int day = Convert.ToInt32(numbers[1]);
             int year = Convert.ToInt32(numbers[2]);
             DateTime output = new DateTime(year, month, day);
             return output;

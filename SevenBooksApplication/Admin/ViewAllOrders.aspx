@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ViewAllOrders.aspx.cs" Inherits="SevenBooksApplication.ViewAllOrders" %>
+﻿<%@ Page Title="Manage Orders" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ViewAllOrders.aspx.cs" Inherits="SevenBooksApplication.ViewAllOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
              DataKeyNames="OrderID"
