@@ -27,6 +27,7 @@ namespace SevenBooksApplication
                     "The following error occurred: " + ex.Message;
                 }
             }
+
             string title = tbTitle.Text;
             string author = tbAuthor.Text;
 
@@ -35,12 +36,9 @@ namespace SevenBooksApplication
             string categoryName = ddlCategory.SelectedValue;
             int stock = Convert.ToInt32(tbQuantity.Text);
 
-
             try
             {
-
                 BusinessLogic.AddBook(title, categoryName, isbn, author, stock, price);
-
             }
             catch (Exception exp)
             {

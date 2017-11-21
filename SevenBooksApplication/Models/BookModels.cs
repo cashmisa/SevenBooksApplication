@@ -101,11 +101,30 @@ namespace SevenBooksApplication.Models
         public virtual Book Book { get; set; }
     }
 
+    public partial class Discount
+    {
+        [Key]
+        [Column(Order = 0, TypeName = "date")]
+        public DateTime StartDate { get; set; }
+
+        [Key]
+        [Column(Order = 1, TypeName = "date")]
+        public DateTime EndDate { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
+        public decimal PercentDiscount { get; set; }
+    }
+
     public class BookContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
+
         public DbSet<Category> Categories { get; set; }
+
         public virtual DbSet<Order> Orders { get; set; }
+
+        public virtual DbSet<Discount> Discounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -141,6 +160,10 @@ namespace SevenBooksApplication.Models
             modelBuilder.Entity<Order>()
                 .Property(e => e.OrderStatus)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Discount>()
+                .Property(e => e.PercentDiscount)
+                .HasPrecision(3, 2);
         }
 
 
