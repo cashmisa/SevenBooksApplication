@@ -37,14 +37,14 @@
               <br />
                <br />
               
-                           <asp:Button ID="btAdd" runat="server" Text="Add to Cart" OnClick="addCart" /><br />
+                           <asp:Button ID="btAdd" runat="server" Text="Add to Cart" OnClick="addCart" Visible="False" /><br />
 
-                            <asp:Button ID="btUpdate" runat="server" Text="UpdateBook" OnClick="update_button" />
+                            <asp:Button ID="btUpdate" runat="server" Text="UpdateBook" OnClick="update_button" Visible="False" />
                        <br />
                <br />
 
 
-               <asp:Button ID="btDelete" runat="server" Text="Delete" OnClick="delete_book" />
+               <asp:Button ID="btDelete" runat="server" Text="Delete" OnClick="delete_book" Visible="False" />
 
               
                <br />
