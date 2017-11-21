@@ -149,7 +149,7 @@ namespace SevenBooksApplication.Models
 
             modelBuilder.Entity<Order>()
                 .Property(e => e.Price)
-                .HasPrecision(20, 18);
+                .HasPrecision(20, 4);
 
             modelBuilder.Entity<Order>()
                 .Property(e => e.Discount)

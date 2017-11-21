@@ -63,9 +63,9 @@ namespace SevenBooksApplication
             }
             else
             {
-                //btnManageBook.Visible = false;
-                //btnManageOrder.Visible = false;
-                //btnManageDiscount.Visible = false;
+                btnManageBook.Visible = false;
+                btnManageOrder.Visible = false;
+                btnManageDiscount.Visible = false;
             }
         }
 

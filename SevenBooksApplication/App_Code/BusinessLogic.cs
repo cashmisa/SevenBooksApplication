@@ -150,7 +150,7 @@ namespace SevenBooksApplication.App_Code
                     BookID = book.BookID,
                     UserID = userID,
                     DatePurchase = DateTime.Today,
-                    Price = book.Price * (1 - GetCurrentDiscount()) * dict[book],
+                    Price = Math.Round((book.Price * (1 - GetCurrentDiscount()) * dict[book]),4),
                     Discount = GetCurrentDiscount(),
                     Quantity = dict[book],
                     OrderStatus = "Processing",

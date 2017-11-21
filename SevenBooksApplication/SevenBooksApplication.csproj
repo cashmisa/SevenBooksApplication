@@ -213,8 +213,6 @@
     <Content Include="App_Data\Bookshop.bak" />
     <Content Include="Login.aspx" />
     <Content Include="MasterPage.Master" />
-    <Content Include="PasswordRecovery.aspx" />
-    <Content Include="CreateUser.aspx" />
     <Content Include="SearchResults.aspx" />
     <Content Include="Admin\SetDiscount.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
@@ -252,7 +250,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="doNotUseOrDelete.Master" />
     <Content Include="Admin\ViewAllOrders.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -303,20 +300,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="PasswordRecovery.aspx.cs">
-      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PasswordRecovery.aspx.designer.cs">
-      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUser.aspx.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUser.aspx.designer.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchResults.aspx.cs">
       <DependentUpon>SearchResults.aspx</DependentUpon>
@@ -402,13 +385,6 @@
       <DependentUpon>OrderSummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="doNotUseOrDelete.Master.cs">
-      <DependentUpon>doNotUseOrDelete.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="doNotUseOrDelete.Master.designer.cs">
-      <DependentUpon>doNotUseOrDelete.Master</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ViewAllOrders.aspx.cs">
       <DependentUpon>ViewAllOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
