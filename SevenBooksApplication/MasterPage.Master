@@ -53,7 +53,7 @@
                                 <asp:Button class="btnHead" ID="btnManageCustomer" runat="server" Text="Manage Customer" BorderStyle="None" OnClick="btnManageCustomer_Click" />
                                 <asp:Button class="btnHead" ID="btnManageDiscount" runat="server" Text="Manage Discount" BorderStyle="None" OnClick="btnManageDiscount_Click" />
                                 <br />
-                                <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
+                                <asp:Panel ID="Panel2" runat="server" Style="text-align: center" DefaultButton="btnSearch">
                                     <asp:DropDownList ID="ddlSearch" runat="server">
                                         <asp:ListItem>Title</asp:ListItem>
                                         <asp:ListItem>ISBN</asp:ListItem>
