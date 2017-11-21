@@ -84,7 +84,7 @@
                                 <asp:Timer ID="Timer1" runat="server" Interval="5000"></asp:Timer>
                                 <asp:Panel ID="Panel5" runat="server">
                                     <div style="text-align:center">
-                                    <h1><asp:Label ID="Label1" runat="server" Text="text"></asp:Label></h1>
+                                    <h1><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h1>
                                         </div>
                                 </asp:Panel>
                                         </ContentTemplate>
