@@ -17,17 +17,16 @@
                 "locale": {
                     "format": "DD/MM/YYYY",
                 },
-                "alwaysShowCalendars": true,
                 "startDate": "21/11/2017",
                 "endDate": "28/11/2017",
                 "minDate": "21/11/2017"
             }, function (start, end, label) {
                 console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
             });
-        })
+        });
     </script>
     <h4>Discount period:</h4>
-    <asp:TextBox ID="tbPeriod" runat="server" Width="182px" />
+    <asp:TextBox ID="tbPeriod" runat="server" Width="150px" />
     <h4>Discount percent:</h4>
     <asp:TextBox ID="tbDiscount" runat="server" Width="32px" />
     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Wrong number format" ValidationExpression="[1-9]{0,1}[0-9]" ControlToValidate="tbDiscount"></asp:RegularExpressionValidator>

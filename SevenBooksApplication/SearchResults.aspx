@@ -1,11 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="SearchResults.aspx.cs" Inherits="SevenBooksApplication.SearchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<asp:Repeater ID="repBookListSearch" runat="server">
+<asp:Repeater ID="repBookListSearch" runat="server" OnItemCommand="AddToCartbtn_Click">
         <HeaderTemplate></HeaderTemplate>
         <ItemTemplate>
             <div style="display: inline-block">
-            <asp:Image runat="server" Width="200px"
-                       ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:Image>
+            <%--<asp:Image runat="server" Width="200px" PostBackUrl='<%# "~/BookDetails.aspx?ISBN=" +Eval("ISBN") %>'
+                       ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:Image>--%>
+            <asp:ImageButton runat="server" Width="200px" CssClass="img-responsive" ID="bookImage"
+                                 PostBackUrl='<%# "~/BookDetails.aspx?ISBN=" +Eval("ISBN") %>'
+                                 ImageUrl='<%# "~/image/"+Eval("ISBN")+".jpg" %>' AlternateText='<%#Eval("ISBN") %>'></asp:ImageButton>
             <br/>
             <table>
                 <tr><td class="title"><asp:Label CssClass="lb-book-list" ID = "lbTitle" runat="server" text ='<%#Eval("Title") %>'></asp:Label></td></tr>
