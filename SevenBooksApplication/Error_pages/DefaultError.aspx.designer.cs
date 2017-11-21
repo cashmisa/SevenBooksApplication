@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SevenBooksApplication {
+namespace SevenBooksApplication.Error_pages {
     
     
-    public partial class AdminDefault {
+    public partial class DefaultError {
     }
 }

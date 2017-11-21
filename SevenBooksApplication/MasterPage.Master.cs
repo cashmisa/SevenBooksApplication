@@ -11,6 +11,9 @@ namespace SevenBooksApplication
     public partial class MasterPage : System.Web.UI.MasterPage
 
     {
+        string userName = "";
+        bool isAdmin = false;
+
         public List<Book> CartList
         {
             get
@@ -38,10 +41,6 @@ namespace SevenBooksApplication
             {
                 btnCart.Text = string.Format("View Cart ({0})", CartList.Count);
             }
-
-
-            string userName = "";
-            bool isAdmin = false;
 
             if (System.Web.HttpContext.Current != null)
             {
@@ -134,6 +133,19 @@ namespace SevenBooksApplication
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Default.aspx");
+        }
+
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CartDetails.aspx");
+        }
+
+        protected void btnWelcome_Click(object sender, EventArgs e)
+        {
+            if(userName != "")
+            {
+                Response.Redirect("~/MyAccount.aspx");
+            }
         }
     }
 }

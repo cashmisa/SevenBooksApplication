@@ -16,7 +16,7 @@
     <RootNamespace>SevenBooksApplication</RootNamespace>
     <AssemblyName>SevenBooksApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -141,6 +141,7 @@
     <Content Include="About.aspx" />
     <Content Include="Admin\AddNewBook.aspx" />
     <Content Include="Content\bootstrap-minty.css" />
+    <Content Include="Error_pages\DefaultError.aspx" />
     <Content Include="Image\9780060555665.jpg" />
     <Content Include="Image\9780062377210.jpg" />
     <Content Include="Image\9780062390851.jpg" />
@@ -217,6 +218,7 @@
     <Content Include="Admin\SetDiscount.aspx" />
     <Content Include="StyleSheetSevenBook1.css" />
     <Content Include="Admin\UpdateBook.aspx" />
+    <Content Include="Error_pages\ErrorPages.Master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -266,6 +268,20 @@
       <DependentUpon>AddNewBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\BusinessLogic.cs" />
+    <Compile Include="Error_pages\ErrorPages.Master.cs">
+      <DependentUpon>ErrorPages.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error_pages\ErrorPages.Master.designer.cs">
+      <DependentUpon>ErrorPages.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Error_pages\DefaultError.aspx.cs">
+      <DependentUpon>DefaultError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error_pages\DefaultError.aspx.designer.cs">
+      <DependentUpon>DefaultError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -413,6 +429,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
