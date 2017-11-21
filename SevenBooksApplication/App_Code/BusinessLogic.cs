@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
+
 namespace SevenBooksApplication.App_Code
 {
     public class BusinessLogic
@@ -165,11 +166,22 @@ namespace SevenBooksApplication.App_Code
             using (BookContext context = new BookContext())
             {
                 Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
-                if(discount == null || discount.EndDate > DateTime.Today)
+                if (discount == null || discount.EndDate > DateTime.Today)
                 {
                     return 0;
                 }
                 return discount.PercentDiscount;
+            }
+        }
+
+        public static List<Order> GetOrderHistory(string userID)
+        {
+            using (BookContext context = new BookContext())
+            {
+                List<Order> orderHistory = (from x in context.Orders
+                                            where x.UserID == userID
+                                            select x).ToList();
+                return orderHistory;
             }
         }
     }
