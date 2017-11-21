@@ -26,25 +26,24 @@ namespace SevenBooksApplication
         {
             if (e.CommandName == "AddToCart")
             {
-                int currentCountInCart = 0;
+
                 List<Book> books = (List<Book>)Session["cartList"];
                 if(books != null && books.Where(x => x.ISBN == e.CommandArgument.ToString()).ToList().Count > 0)
                 {
                     Book book = books.Where(x => x.ISBN == e.CommandArgument.ToString()).First();
-                    currentCountInCart = books.Where(x => x.ISBN == e.CommandArgument.ToString()).ToList().Count;
+                    int currentCountInCart = books.Where(x => x.ISBN == e.CommandArgument.ToString()).ToList().Count;
 
-                    if (book.Stock - currentCountInCart > 0)
-                    {
-                        ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
-                        Response.Redirect(Request.RawUrl);
-                    }
-                    else
+                    if (book.Stock - currentCountInCart < 0)
                     {
                         string msg = string.Format("<script>alert('Out of stock.');</script>");
                         Response.Write(msg);
+                        return;
                     }
                 }
-                
+
+                ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
+                Response.Redirect(Request.RawUrl);
+
             }
         }
     }

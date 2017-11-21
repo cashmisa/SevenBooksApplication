@@ -128,7 +128,7 @@ namespace SevenBooksApplication
 
         protected void btnManageOrder_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Admin/ViewAllOrder.aspx");
+            Response.Redirect("~/Admin/ViewAllOrders.aspx");
         }
 
         protected void btnManageDiscount_Click(object sender, EventArgs e)

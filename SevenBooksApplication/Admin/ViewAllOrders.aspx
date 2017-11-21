@@ -20,11 +20,6 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="BookID">
-                    <EditItemTemplate>
-                        
-
-
-                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("BookID") %>'></asp:Label>
                     </ItemTemplate>

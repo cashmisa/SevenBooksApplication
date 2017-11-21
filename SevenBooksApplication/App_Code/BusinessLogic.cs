@@ -215,8 +215,8 @@ namespace SevenBooksApplication.App_Code
         {
             using (BookContext context = new BookContext())
             {
-                Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
-                if (discount == null || discount.EndDate < DateTime.Today)
+                Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
+                if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
                 {
                     return 0;
                 }
@@ -228,7 +228,11 @@ namespace SevenBooksApplication.App_Code
         {
             using (BookContext context = new BookContext())
             {
-                Discount discount = context.Discounts.OrderBy(d => d.EndDate).FirstOrDefault();
+                Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
+                if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
+                {
+                    return DateTime.Today.AddDays(-1);
+                }
                 return discount.EndDate;
             }
         }

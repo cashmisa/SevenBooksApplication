@@ -4,7 +4,6 @@
 
     <table style="width: 1196px; height: 258px">
         <tr>
-            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <td style="width: 174px">
                 &nbsp;</td>
             <td style="width: 911px">
