@@ -27,7 +27,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <table class="auto-style1">
+                    <table class="auto-style1" border="0">
                         <tr>
                             <td class="bgColour" colspan="2">
                                 <asp:Panel class="bgColourInLineBlockLeft" ID="Panel4" runat="server" Style="text-align: right">
@@ -53,7 +53,7 @@
                                 <asp:Button class="btnHead" ID="btnManageOrder" runat="server" Text="Manage Order" BorderStyle="None" OnClick="btnManageOrder_Click" />
                                 <asp:Button class="btnHead" ID="btnManageDiscount" runat="server" Text="Manage Discount" BorderStyle="None" OnClick="btnManageDiscount_Click" />
                                 <br />
-                                <asp:Panel ID="Panel2" runat="server" Style="text-align: center">
+                                <asp:Panel ID="Panel2" runat="server" Style="text-align: center" DefaultButton="btnSearch">
                                     <asp:DropDownList ID="ddlSearch" runat="server">
                                         <asp:ListItem>Title</asp:ListItem>
                                         <asp:ListItem>ISBN</asp:ListItem>

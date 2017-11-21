@@ -2,9 +2,6 @@
 using SevenBooksApplication.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
@@ -52,6 +49,7 @@ namespace SevenBooksApplication
             if (e.CommandName == "AddToCart")
             {
                 ((List<Book>)Session["cartList"]).Add(BusinessLogic.SearchBookByISBN(e.CommandArgument.ToString()));
+                Response.Redirect(Request.RawUrl);
             }
         }
     }

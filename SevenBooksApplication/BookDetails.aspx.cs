@@ -45,7 +45,12 @@ namespace SevenBooksApplication
 
         protected void addCart(object sender, EventArgs e)
         {
-            ((List<Book>)Session["cartList"]).Add(b);
+            int qty = Convert.ToInt32(ddlQty.SelectedItem.Text);
+            for(int i=0;i<qty;i++)
+            {
+                ((List<Book>)Session["cartList"]).Add(b);
+            }
+           
             Response.Redirect(Request.RawUrl);
             SetVisible();
         }
