@@ -43,7 +43,6 @@ table {
 }
 
 
-
 .lb-book-list {
     display:block;
     float:left;
@@ -174,7 +173,8 @@ table {
 }
 .price {
     font-size: 0.95em;
-    font-style: italic
+    font-style: italic;
+
 }
 .add-to-cart {
     padding: 10px;
