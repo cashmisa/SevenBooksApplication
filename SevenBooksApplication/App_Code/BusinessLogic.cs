@@ -1,15 +1,17 @@
 ﻿using SevenBooksApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace SevenBooksApplication.App_Code
 {
     public class BusinessLogic
     {
-        //BookContext context = new BookContext();
+        static BookContext context = new BookContext();
+
         public static void AddBook(string title, string categoryName, string isbn, string author, int stock, decimal price)
         {
+
             using (BookContext context = new BookContext())
             {
                 Book book = new Book
@@ -42,33 +44,49 @@ namespace SevenBooksApplication.App_Code
         }
         public static void DeleteBook(string ISBN)
         {
-            using (BookContext context = new BookContext())
-            {
-                Book book = context.Books.Where(x => x.ISBN == ISBN).First();
-                context.Books.Remove(book);
-                context.SaveChanges();
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            Book book = context.Books.Where(x => x.ISBN == ISBN).First();
+            context.Books.Remove(book);
+            context.SaveChanges();
+            // }
         }
+        public static List<Category> FindAllCategories()
+        {
+            //using (BookContext context = new BookContext())
+            //{
+            return context.Categories.ToList<Category>();
+            //}
+        }
+
         public static List<Book> SearchAllBooks()
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Books.ToList<Book>();
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            return context.Books.ToList<Book>();
+            // }
         }
         public static List<Book> SearchBookByTitle(string Title)
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Books.Where(x => x.Title.ToLower().Contains(Title.ToLower().Trim())).ToList<Book>();
-            }
+            // using (BookContext context = new BookContext())
+            // {
+            return context.Books.Where(x => x.Title.ToLower().Contains(Title.ToLower().Trim())).ToList<Book>();
+            //}
+        }
+
+        public static List<Book> SearchBookByAuthor(string Author)
+        {
+            // using (BookContext context = new BookContext())
+            //{
+            return context.Books.Where(x => x.Author.ToLower().Contains(Author.ToLower().Trim())).ToList<Book>();
+            //}
         }
         public static Book SearchBookByISBN(string ISBN)
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Books.Where(x => x.ISBN.Contains(ISBN.Trim())).ToList<Book>().FirstOrDefault();
-            }
+            // using (BookContext context = new BookContext())
+            //{
+            return context.Books.Where(x => x.ISBN.Contains(ISBN.Trim())).ToList<Book>().FirstOrDefault();
+            // }
         }
 
         public static List<Book> SearchBookByISBNList(string ISBNa)
@@ -80,11 +98,11 @@ namespace SevenBooksApplication.App_Code
 
         public static Book SearchBookByBookId(int bookID)
         {
-            using (BookContext context = new BookContext())
-            {
-                Book searchedID = context.Books.Where(x => x.BookID == bookID).FirstOrDefault();
-                return searchedID;
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            Book searchedID = context.Books.Where(x => x.BookID == bookID).FirstOrDefault();
+            return searchedID;
+            //}
         }
         public static int GetCategoryID(string category)
         {
@@ -100,33 +118,33 @@ namespace SevenBooksApplication.App_Code
         }
         public static List<Book> SearchBookByCategory(string category)
         {
-            using (BookContext context = new BookContext())
-            {
-                int categoryID = GetCategoryID(category);
-                return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
+            // using (BookContext context = new BookContext())
+            // {
+            int categoryID = GetCategoryID(category);
+            return context.Books.Where(x => x.CategoryID == categoryID).ToList<Book>();
 
-            }
+            //}
         }
         public static List<Order> SearchAllOrder()
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.ToList<Order>();
-            }
+            // using (BookContext context = new BookContext())
+            //{
+            return context.Orders.ToList<Order>();
+            //}
         }
         public static List<Order> SearchOrderByUserID(string UserID)
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.Where(x => x.UserID == UserID).ToList<Order>();
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            return context.Orders.Where(x => x.UserID == UserID).ToList<Order>();
+            //}
         }
         public static Order SearchByOrderID(int OrderID)
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Orders.Where(x => x.OrderID == OrderID).FirstOrDefault();
-            }
+            // using (BookContext context = new BookContext())
+            //{
+            return context.Orders.Where(x => x.OrderID == OrderID).FirstOrDefault();
+            //}
         }
         public static void UpdateOrder(int OrderID, string OrderStatus)
         {
@@ -150,7 +168,7 @@ namespace SevenBooksApplication.App_Code
                     BookID = book.BookID,
                     UserID = userID,
                     DatePurchase = DateTime.Today,
-                    Price = Math.Round((book.Price * (1 - GetCurrentDiscount()) * dict[book]),4),
+                    Price = Math.Round((book.Price * (1 - GetCurrentDiscount()) * dict[book]), 4),
                     Discount = GetCurrentDiscount(),
                     Quantity = dict[book],
                     OrderStatus = "Processing",
@@ -158,7 +176,7 @@ namespace SevenBooksApplication.App_Code
 
                 orders.Add(o);
             }
-            
+
             using (BookContext context = new BookContext())
             {
                 context.Orders.AddRange(orders);
@@ -171,7 +189,7 @@ namespace SevenBooksApplication.App_Code
                     throw new Exception(e.ToString(), e.InnerException);
                 }
 
-                foreach(Book book in dict.Keys)
+                foreach (Book book in dict.Keys)
                 {
                     Book b = context.Books.Where(x => x.BookID == book.BookID).First();
                     b.Stock -= dict[book];
@@ -250,10 +268,10 @@ namespace SevenBooksApplication.App_Code
         }
         public static String GetBookTitle(int bookID)
         {
-            using (BookContext context = new BookContext())
-            {
-                return context.Books.Where(x => x.BookID ==bookID).FirstOrDefault().Title;
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            return context.Books.Where(x => x.BookID == bookID).FirstOrDefault().Title;
+            //}
         }
 
 

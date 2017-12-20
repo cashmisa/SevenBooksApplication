@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,8 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -141,6 +144,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\AddNewBook.aspx" />
+    <Content Include="AndroidService.svc" />
     <Content Include="Content\bootstrap-minty.css" />
     <Content Include="Error_pages\DefaultError.aspx" />
     <Content Include="Image\9780060555665.jpg" />
@@ -267,6 +271,9 @@
     <Compile Include="Admin\AddNewBook.aspx.designer.cs">
       <DependentUpon>AddNewBook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AndroidService.svc.cs">
+      <DependentUpon>AndroidService.svc</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BusinessLogic.cs" />
     <Compile Include="Error_pages\ErrorPages.Master.cs">
       <DependentUpon>ErrorPages.Master</DependentUpon>
@@ -282,6 +289,7 @@
     <Compile Include="Error_pages\DefaultError.aspx.designer.cs">
       <DependentUpon>DefaultError.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IAndroidService.cs" />
     <Compile Include="User\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
