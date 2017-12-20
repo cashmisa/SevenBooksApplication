@@ -12,35 +12,35 @@ namespace SevenBooksApplication.App_Code
         public static void AddBook(string title, string categoryName, string isbn, string author, int stock, decimal price)
         {
 
-            using (BookContext context = new BookContext())
+            //using (BookContext context = new BookContext())
+            //{
+            Book book = new Book
             {
-                Book book = new Book
-                {
-                    Title = title,
-                    ISBN = isbn,
-                    Author = author,
-                    Stock = stock,
-                    CategoryID = GetCategoryID(categoryName),
-                    Price = price
-                };
-                context.Books.Add(book);
-                context.SaveChanges();
+                Title = title,
+                ISBN = isbn,
+                Author = author,
+                Stock = stock,
+                CategoryID = GetCategoryID(categoryName),
+                Price = price
+            };
+            context.Books.Add(book);
+            context.SaveChanges();
 
-            }
+            // }
         }
         public static void UpdateBook(int BookID, string Title, string CategoryName, string ISBN, string Author, int Stock, decimal Price)
         {
-            using (BookContext context = new BookContext())
-            {
-                Book book = context.Books.Where(x => x.ISBN == ISBN).First();
-                book.Title = Title;
-                book.CategoryID = GetCategoryID(CategoryName);
-                book.ISBN = ISBN;
-                book.Author = Author;
-                book.Stock = Stock;
-                book.Price = Price;
-                context.SaveChanges();
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            Book book = context.Books.Where(x => x.ISBN == ISBN).First();
+            book.Title = Title;
+            book.CategoryID = GetCategoryID(CategoryName);
+            book.ISBN = ISBN;
+            book.Author = Author;
+            book.Stock = Stock;
+            book.Price = Price;
+            context.SaveChanges();
+            //}
         }
         public static void DeleteBook(string ISBN)
         {
@@ -106,15 +106,15 @@ namespace SevenBooksApplication.App_Code
         }
         public static int GetCategoryID(string category)
         {
-            using (BookContext context = new BookContext())
-            {
+            //using (BookContext context = new BookContext())
+            //{
 
-                Category c = context.Categories.Where(x => x.Name == category).FirstOrDefault();
-                if (c == null) { return 0; }
-                else
-                    return c.CategoryID;
+            Category c = context.Categories.Where(x => x.Name == category).FirstOrDefault();
+            if (c == null) { return 0; }
+            else
+                return c.CategoryID;
 
-            }
+            //}
         }
         public static List<Book> SearchBookByCategory(string category)
         {
@@ -148,12 +148,12 @@ namespace SevenBooksApplication.App_Code
         }
         public static void UpdateOrder(int OrderID, string OrderStatus)
         {
-            using (BookContext context = new BookContext())
-            {
-                Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
-                order.OrderStatus = OrderStatus;
-                context.SaveChanges();
-            }
+            //using (BookContext context = new BookContext())
+            //{
+            Order order = context.Orders.Where(x => x.OrderID == OrderID).First();
+            order.OrderStatus = OrderStatus;
+            context.SaveChanges();
+            //}
         }
 
         public static void CreateOrder(List<Book> books, string userID)
@@ -177,33 +177,33 @@ namespace SevenBooksApplication.App_Code
                 orders.Add(o);
             }
 
-            using (BookContext context = new BookContext())
+            // using (BookContext context = new BookContext())
+            //{
+            context.Orders.AddRange(orders);
+            try
             {
-                context.Orders.AddRange(orders);
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception e)
-                {
-                    throw new Exception(e.ToString(), e.InnerException);
-                }
-
-                foreach (Book book in dict.Keys)
-                {
-                    Book b = context.Books.Where(x => x.BookID == book.BookID).First();
-                    b.Stock -= dict[book];
-                }
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (Exception e)
-                {
-                    throw new Exception(e.ToString(), e.InnerException);
-                }
-
+                context.SaveChanges();
             }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString(), e.InnerException);
+            }
+
+            foreach (Book book in dict.Keys)
+            {
+                Book b = context.Books.Where(x => x.BookID == book.BookID).First();
+                b.Stock -= dict[book];
+            }
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString(), e.InnerException);
+            }
+
+            //            }
 
         }
 
@@ -231,40 +231,40 @@ namespace SevenBooksApplication.App_Code
         //     Discount percent (eg. 0.50). Return 0 if expired or no current discount.
         public static decimal GetCurrentDiscount()
         {
-            using (BookContext context = new BookContext())
+            // using (BookContext context = new BookContext())
+            //{
+            Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
+            if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
             {
-                Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
-                if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
-                {
-                    return 0;
-                }
-                return discount.PercentDiscount;
+                return 0;
             }
+            return discount.PercentDiscount;
+            //}
         }
 
         public static DateTime GetCurrentDiscountEndDate()
         {
-            using (BookContext context = new BookContext())
+            // using (BookContext context = new BookContext())
+            // {
+            Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
+            if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
             {
-                Discount discount = context.Discounts.OrderByDescending(d => d.EndDate).FirstOrDefault();
-                if (discount == null || discount.EndDate < DateTime.Today || discount.StartDate > DateTime.Today)
-                {
-                    return DateTime.Today.AddDays(-1);
-                }
-                return discount.EndDate;
+                return DateTime.Today.AddDays(-1);
             }
+            return discount.EndDate;
+            // }
         }
 
         public static List<Order> GetOrderHistory(string userID)
         {
-            using (BookContext context = new BookContext())
-            {
-                List<Order> orderHistory = (from x in context.Orders
-                                            where x.UserID == userID
-                                            orderby x.DatePurchase descending
-                                            select x).ToList();
-                return orderHistory;
-            }
+            // using (BookContext context = new BookContext())
+            // {
+            List<Order> orderHistory = (from x in context.Orders
+                                        where x.UserID == userID
+                                        orderby x.DatePurchase descending
+                                        select x).ToList();
+            return orderHistory;
+            // }
         }
         public static String GetBookTitle(int bookID)
         {
