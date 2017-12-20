@@ -49,7 +49,7 @@
                                     <span style="color:#FFCE67"> | </span>
                                     <asp:Button class="btnHead" ID="btnCart" runat="server" Text="View Cart" BorderStyle="None" OnClick="btnCart_Click" />
                                     <span style="color:#FFCE67"> | </span>
-                                    <asp:LoginStatus class="btnHead" ID="LoginStatus" runat="server" LoginText="Login / Register" />
+                                    <asp:LoginStatus class="btnHead" ID="LoginStatus" runat="server" LoginText="Login / Register" OnLoggingOut="LoginStatus_LoggingOut" />
                                 </asp:Panel>
 
 

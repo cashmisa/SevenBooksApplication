@@ -150,8 +150,13 @@ namespace SevenBooksApplication
         {
             if(userName != "")
             {
-                Response.Redirect("~/MyAccount.aspx");
+                Response.Redirect("~/User/MyAccount.aspx");
             }
+        }
+
+        protected void LoginStatus_LoggingOut(object sender, System.Web.UI.WebControls.LoginCancelEventArgs e)
+        {
+            Session["cartList"] = new List<Book>();
         }
     }
 }

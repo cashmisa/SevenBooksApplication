@@ -12,6 +12,7 @@ namespace SevenBooksApplication
 {
     public partial class CartDetails : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -33,6 +34,7 @@ namespace SevenBooksApplication
                 Label3.Text = String.Format("S${0:0.00}", GrandTotal(subtotal, discount));
                 Decimal SubTotal = Convert.ToDecimal(subtotal);
             }
+
         }
         public static Decimal GrandTotal(double subtotal, decimal discount)
         {
@@ -50,6 +52,14 @@ namespace SevenBooksApplication
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/User/CheckoutCart.aspx");
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            List<Book> bookList = Session["cartList"] as List<Book>;
+            bookList.RemoveAt(e.RowIndex);
+            GridView1.DataSource = bookList;
+            GridView1.DataBind();
         }
     }
 }

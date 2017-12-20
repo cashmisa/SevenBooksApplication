@@ -191,6 +191,7 @@
     <Content Include="Image\9781619634480.jpg" />
     <Content Include="Image\9781911015222.jpg" />
     <Content Include="Image\StoreLogo.jpg" />
+    <Content Include="SQL\script.sql" />
     <Content Include="User\MyAccount.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="BookDetails.aspx" />
@@ -220,6 +221,7 @@
     <Content Include="Error_pages\ErrorPages.Master" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\SevenBooksApplication - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="OrderSummary.aspx" />
     <Content Include="Scripts\bootstrap.js" />

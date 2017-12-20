@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SevenBooksApplication.App_Code;
 using System.Web.Security;
+using SevenBooksApplication.Models;
 
 namespace SevenBooksApplication
 {
@@ -34,6 +35,8 @@ namespace SevenBooksApplication
 
         private void Redirect()
         {
+            Session["cartList"] = new List<Book>();
+
             bool isAdmin = Roles.IsUserInRole("admin");
             if(isAdmin)
             {

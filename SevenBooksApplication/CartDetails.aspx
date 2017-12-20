@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="CartDetails.aspx.cs" Inherits="SevenBooksApplication.CartDetails" %>
+﻿<%@ Page Title="Cart Details" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="CartDetails.aspx.cs" Inherits="SevenBooksApplication.CartDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -11,7 +11,7 @@
                 <table class="auto-style1" style="width: 97%">
                     <tr>
                         <td class="auto-style3">
-                            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" AutoGenerateColumns="False" Width="588px">
+                            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" AutoGenerateColumns="False" Width="588px" OnRowDeleting="GridView1_RowDeleting">
                                 <Columns>
                                     <asp:BoundField DataField="Title" HeaderText="Title" />
                                     <asp:BoundField DataField="Author" HeaderText="Author" />
@@ -22,6 +22,7 @@
                                             <image src="image/<%# Eval("ISBN") %>.jpg" width="90" height="120"></image>
                                         </ItemTemplate>
                                     </asp:TemplateField>
+                                    <asp:CommandField ShowDeleteButton="true" />
                                 </Columns>
                             </asp:GridView>
                         </td>

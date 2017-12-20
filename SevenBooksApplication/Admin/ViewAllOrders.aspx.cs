@@ -45,20 +45,16 @@ namespace SevenBooksApplication
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-             if (e.Row.RowType == DataControlRowType.DataRow)
-        {
-            Order order = (Order) e.Row.DataItem;
-            int id = order.BookID;
-            string title= BusinessLogic.GetBookTitle(id);
- 
-            Label lbTitle = (e.Row.FindControl("lbTitle") as Label);
-            if (lbTitle != null)
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Order order = (Order)e.Row.DataItem;
+                int id = order.BookID;
+                string title = BusinessLogic.GetBookTitle(id);
+
+                Label lbTitle = (e.Row.FindControl("lbTitle") as Label);
+                if (lbTitle != null)
                     lbTitle.Text = title;
- 
-          
- 
-           
+            }
         }
     }
-   }
- }
+}
